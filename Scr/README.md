@@ -1,1 +1,1 @@
-Put the source code for your .NET project here
+Put the source code for your .NET solution and projects here
