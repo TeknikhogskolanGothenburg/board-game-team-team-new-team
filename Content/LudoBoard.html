@@ -1,10 +1,11 @@
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" />
+        <link href="reset.css" rel="stylesheet" />
+        <link href="LudoStyle.css" rel="stylesheet" />
     </head>
     <body>
         <div class="gameInfo">
-            <div id="currentPlayer">player1</div>
+            <div class="currentPlayer">player1</div>
             <div class="dice">
                 <div class="diceDot" id="center"></div>
                 <div class="diceDot" id="leftUpper"></div>
@@ -18,17 +19,17 @@
         <div class="board">
             <div class="wing" id="leftWing">
                 <div class="field"></div>
-                <div class="field" id="player2"></div>
+                <div class="field player2"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
-                <div class="field" id="player2"></div>
-                <div class="field" id="player2"></div>
-                <div class="field" id="player2"></div>
-                <div class="field" id="player2"></div>
-                <div class="field" id="player2"></div>
+                <div class="field player2"></div>
+                <div class="field player2"></div>
+                <div class="field player2"></div>
+                <div class="field player2"></div>
+                <div class="field player2"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
@@ -38,17 +39,17 @@
             </div>
             <div class="wing" id="rightWing">
                 <div class="field"></div>
-                <div class="field" id="player3"></div>
+                <div class="field player3"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
-                <div class="field" id="player3"></div>
-                <div class="field" id="player3"></div>
-                <div class="field" id="player3"></div>
-                <div class="field" id="player3"></div>
-                <div class="field" id="player3"></div>
+                <div class="field player3"></div>
+                <div class="field player3"></div>
+                <div class="field player3"></div>
+                <div class="field player3"></div>
+                <div class="field player3"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
@@ -58,17 +59,17 @@
             </div>
             <div class="wing" id="topWing">
                 <div class="field"></div>
-                <div class="field" id="player4"></div>
+                <div class="field player4"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
-                <div class="field" id="player4"></div>
-                <div class="field" id="player4"></div>
-                <div class="field" id="player4"></div>
-                <div class="field" id="player4"></div>
-                <div class="field" id="player4"></div>
+                <div class="field player4"></div>
+                <div class="field player4"></div>
+                <div class="field player4"></div>
+                <div class="field player4"></div>
+                <div class="field player4"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
@@ -78,17 +79,17 @@
             </div>
             <div class="wing" id="bottomWing">
                 <div class="field"></div>
-                <div class="field" id="player1"></div>
+                <div class="field player1"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
-                <div class="field" id="player1"></div>
-                <div class="field" id="player1"></div>
-                <div class="field" id="player1"></div>
-                <div class="field" id="player1"></div>
-                <div class="field" id="player1"></div>
+                <div class="field player1"></div>
+                <div class="field player1"></div>
+                <div class="field player1"></div>
+                <div class="field player1"></div>
+                <div class="field player1"></div>
                 <div class="field"></div>
                 <div class="field"></div>
                 <div class="field"></div>
@@ -97,60 +98,60 @@
                 <div class="field"></div>
             </div>
             <div class="goal"></div>
-            <div class="start" id="player1">
+            <div class="start player1">
                 <div class="field">
-                    <div class="brick" id="player1"></div>
+                    <div class="brick player1"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player1"></div>
+                    <div class="brick player1"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player1"></div>
+                    <div class="brick player1"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player1"></div>    
-                </div>
-            </div>
-            <div class="start" id="player2">
-                <div class="field">
-                    <div class="brick" id="player2"></div>
-                </div>
-                <div class="field">
-                    <div class="brick" id="player2"></div>
-                </div>
-                <div class="field">
-                    <div class="brick" id="player2"></div>
-                </div>
-                <div class="field">
-                    <div class="brick" id="player2"></div>    
+                    <div class="brick player1"></div>    
                 </div>
             </div>
-            <div class="start" id="player3">
+            <div class="start player2">
                 <div class="field">
-                    <div class="brick" id="player3"></div>
+                    <div class="brick player2"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player3"></div>
+                    <div class="brick player2"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player3"></div>
+                    <div class="brick player2"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player3"></div>    
+                    <div class="brick player2"></div>    
                 </div>
             </div>
-            <div class="start" id="player4">
+            <div class="start player3">
                 <div class="field">
-                    <div class="brick"  id="player4"></div>
+                    <div class="brick player3"></div>
                 </div>
                 <div class="field">
-                    <div class="brick" id="player4"></div>
+                    <div class="brick player3"></div>
                 </div>
                 <div class="field">
-                    <div class="brick"  id="player4"></div>
+                    <div class="brick player3"></div>
                 </div>
                 <div class="field">
-                    <div class="brick"  id="player4"></div>    
+                    <div class="brick player3"></div>    
+                </div>
+            </div>
+            <div class="start player4">
+                <div class="field">
+                    <div class="brick player4"></div>
+                </div>
+                <div class="field">
+                    <div class="brick player4"></div>
+                </div>
+                <div class="field">
+                    <div class="brick player4"></div>
+                </div>
+                <div class="field">
+                    <div class="brick player4"></div>    
                 </div>
             </div>
         </div>

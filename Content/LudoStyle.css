@@ -2,6 +2,10 @@ html{
     background-color: lightgray;
 }
 
+.currentPlayer{
+    font-size: 300%;
+}
+
 .dice{
     width: 56px; 
     height: 56px;  
@@ -10,7 +14,7 @@ html{
     margin:0px;
     padding:0px;
     position: absolute;
-    top: 50px;
+    top: 150px;
     left: 50px;
 }
 
@@ -93,6 +97,7 @@ html{
 }
 
 .brick{
+    margin: 9px;
     width: 40px;
     height: 40px;  
     border-radius: 50px;
@@ -139,38 +144,38 @@ html{
     transform: rotate(270deg);
 }
 
-#player1{
+.player1{
     background: red;
 }
 
-#player2{
+.player2{
     background: green;
 }
 
-#player3{
+.player3{
     background: orange;
 }
 
-#player4{
+.player4{
     background: blue;
 }
 
-.start#player1{
+.start.player1{
     left:0px;
     top:540px;
 }
 
-.start#player2{
+.start.player2{
     left:0px;
     top:0px;
 }
 
-.start#player3{
+.start.player3{
     left:540px;
     top:540px;
 }
 
-.start#player4{
+.start.player4{
     left:540px;
     top:0px;
 }
