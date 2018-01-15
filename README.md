@@ -19,7 +19,7 @@ Everybody in the team should now clone the teams webserver-repo, and be able to 
 
 If you get stuck see the [hints](Hints.md)
 
-## Prerequsists
+# Prerequsists
 
 You will need the following:
 
@@ -28,7 +28,7 @@ You will need the following:
 * A git client ([Git](https://git-scm.com/), [GitHub](https://desktop.github.com/), [SourceTree](https://www.sourcetreeapp.com/)), there is also some git support in Visual Studio.
 * [DocFx](https://dotnet.github.io/docfx/index.html)
 
-## License
+# License
 Unlicensed, see LICENSE file for the details.
 
 Feel free to copy and use this material, but I would ofcourse be happy to recive an acknowlage or feedback.
