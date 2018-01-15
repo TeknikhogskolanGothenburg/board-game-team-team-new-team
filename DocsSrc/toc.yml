@@ -1,7 +1,9 @@
-- name: Articles
-  href: articles/
+- name: Architechture
+  href: architecture/
+  homepage: architecture/index.md
 - name: User stories
   href: userstories/
+  homepage: userstories/index.md
 - name: Api Documentation
   href: api/
   homepage: api/index.md

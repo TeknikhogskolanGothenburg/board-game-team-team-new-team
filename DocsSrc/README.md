@@ -1,1 +1,1 @@
-Put the documentation of the webserver here
+Put the documentation of the board game here
