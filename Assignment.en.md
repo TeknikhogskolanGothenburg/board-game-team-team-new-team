@@ -4,7 +4,7 @@ The assigment should be solved in teams of 3-4 students.
 
 The assignment consist of two parts, a programming part and a theory/docmentation part. Please see the prerequsists section (in the [README.md](README.md)).
 
-The work should be done in the teams github repo which should be public. Whit a [commit early and often](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategy, the recomendation is of course only to commit code and documentation that builds.
+The work should be done in the teams github repo which should be public. With a [commit early and often](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategy, the recomendation is of course only to commit code and documentation that builds.
 
 ## Programming part
 

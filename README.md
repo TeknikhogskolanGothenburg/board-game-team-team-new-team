@@ -7,7 +7,7 @@ This repository contains what is needed to solve the second assigment in the cou
 * Swedish [Assignment.sv.md](assignment.sv.md)
 * English [Assignment.en.md](assignment.en.md)
 
-If there is a difference between the swedish and english assignment description, the swedish one the correct one.
+If there is a difference between the swedish and english assignment description, the swedish one is the correct one.
 
 ## Getting started
 

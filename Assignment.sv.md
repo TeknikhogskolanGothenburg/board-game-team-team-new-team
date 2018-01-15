@@ -1,10 +1,10 @@
-# Board game assignment
+#Brädspel
 
-The assigment should be solved in teams of 3-4 students.
+Uppgiften skall lösas i teams på 3 till 4 studenter.
 
-The assignment consist of two parts, a programming part and a theory/docmentation part. Please see the prerequsists section (in the [README.md](README.md)).
+Uppgiften består av två delar, en programmeringsdel och en teori/dokumentationsdel. 
 
-The work should be done in the teams github repo which should be public. Whit a [commit early and often](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategy, the recomendation is of course only to commit code and documentation that builds.
+Allt ni gör skall göras i ert GitHub repo (båda kod och dokumentation), som ligger på ert Team. Ni skall använda en ["commit tidigt och ofta"](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategi, såklart bör ni endast commita kod och dokumentation som kan kompileras.
 
 ## Programming part
 
