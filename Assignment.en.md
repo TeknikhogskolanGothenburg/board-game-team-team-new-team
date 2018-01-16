@@ -1,37 +1,37 @@
 # Board game assignment
 
+**OBS!** This is a translation of the [swedish assigment description](assignment.sv.md), and the swedish one is always the master document, so for any twist refer to the swedish version.
+
 The assigment should be solved in teams of 3-4 students.
 
-The assignment consist of two parts, a programming part and a theory/docmentation part. Please see the prerequsists section (in the [README.md](README.md)).
+The assignment consist of two parts, a programming part and a docmentation part.
 
-The work should be done in the teams github repo which should be public. With a [commit early and often](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategy, the recomendation is of course only to commit code and documentation that builds.
+All work should be done in the teams github repo which should be public. With a [commit early and often](https://blog.codinghorror.com/check-in-early-check-in-often/) ([1](https://sethrobertson.github.io/GitBestPractices/)) strategy, the recomendation is of course only to commit code and documentation that builds.
 
-## Programming part
+# Programming
 
-This repo is an assignment template, for implementening using ASP.NET MVC.
+This project is about implememting a board game, it's upp to you which one, but there is a Ludo board in the folder *Content* which you can use for a start (to avoid implementing the HTML+CSS). The easist would be a game with a predictable game flow.
 
-The folder *content* contains an example on how the [Ludo](https://en.wikipedia.org/wiki/Ludo_(board_game)) game board can be implemented in HTML and CSS.
+## Basics
 
-Add store your source code in the *src* folder
+The game should be a website which you enter as a player.
 
-### Game Engine
+## Game Engine
+
+The game engine controlls all rules in the game.
 
 Implement the game engine in a serperate Class Library, the implementation should follow the SOLID princinples. 
 
-An instance of the game engine should contain the state of the whole game, it should be possible to initiliate the game with a state (as loading a saved game).
+An instance of the game engine should contain the state of the whole game, it should be possible to initiliate the game with a state.
 
 A Unit Test Project should be created to test the game logic. 
 
-## Teory / Documentation part
+# Documentation
 
-In the folder DocsSrc is an more or less empty DocFx project. DocFx is compiled documentation written in [markdown](https://guides.github.com/features/mastering-markdown/).
+The documentation should be written using markdown in the folder DocsSrc, you choose within the team if you should write in swedish or english.
 
-Your assigment is to fill the files:
+Write user stories (the folder DocsSrc\userstories), and do not start coding anything before you have written at least three user stories, but make sure to maintain and add user stories during the process.
 
-* articles\Architecture.md
-
-And to build the documentation for the source code to the webserver.
-
-The run the documentation you can see the content of this by opening commandline and navigate to the DocsSrc folder, and write ```docfx .\docfx.json --serve --port 8081```, then open your browser and navigate to [localhost:8081](http://localhost:8081).
+Descript the architecture of your application (in the folder DocsSrc\acrhitecture).
 
 Remeber to include references to all resources you use.

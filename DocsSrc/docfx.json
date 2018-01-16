@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "../src/GameEngine/**.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -13,7 +13,7 @@
           ]
         }
       ],
-      "dest": "api",
+      "dest": "gameengine",
       "disableGitFeatures": false
     }
   ],
@@ -21,8 +21,8 @@
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "gameengine/**.yml",
+          "gameengine/index.md"
         ]
       },
       {

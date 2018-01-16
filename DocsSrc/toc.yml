@@ -4,6 +4,6 @@
 - name: User stories
   href: userstories/
   homepage: userstories/index.md
-- name: Api Documentation
-  href: api/
-  homepage: api/index.md
+- name: Gameengine Documentation
+  href: gameengine/
+  homepage: gameengine/index.md
