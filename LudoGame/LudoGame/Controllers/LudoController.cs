@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GameEngine;
 
 namespace LudoGame.Controllers
 {
@@ -12,14 +13,6 @@ namespace LudoGame.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
-        // 
-        // GET: /Ludo/Welcome/ 
-
-        public string Welcome()
-        {
-            return "This is the Welcome action method...";
         }
     }
 }
