@@ -1,5 +1,14 @@
 ﻿<div class="gameInfo">
-    <button type="button" style="width:100px; height:100px; ">Click Me!</button>
+    <button onclick="myFunction()">Click me</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
+
     <div class="currentPlayer">Joe</div>
     <div class="dice">
         <div class="diceDot" id="center"></div>
