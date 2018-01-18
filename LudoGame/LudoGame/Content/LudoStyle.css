@@ -179,3 +179,9 @@ html{
     left:540px;
     top:0px;
 }
+
+#DiceButton{
+    height: 75px;
+    width: 100px;
+    background-color: purple;
+}
