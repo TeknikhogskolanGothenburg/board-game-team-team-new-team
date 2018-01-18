@@ -3,10 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-@{
-    Random s = new Random();
-    var @i = 0;
-}
+@Html.Partial("~/Views/Shared/DiceView.cshtml")
 
-@Html.Partial("~/Views/Shared/LudoGameView.cshtml");
+@Html.Partial("~/Views/Shared/BoardView.cshtml")
 
