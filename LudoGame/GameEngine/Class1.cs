@@ -8,5 +8,12 @@ namespace GameEngine
 {
     public class Class1
     {
+        public int RollTheDice()
+        {
+            Random num = new Random();
+            int number = num.Next(1, 7);
+
+            return number;
+        }
     }
 }

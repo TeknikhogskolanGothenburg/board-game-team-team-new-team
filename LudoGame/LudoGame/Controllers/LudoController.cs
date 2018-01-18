@@ -12,6 +12,9 @@ namespace LudoGame.Controllers
         // GET: /Ludo/
         public ActionResult Index()
         {
+            Class1 myClass = new Class1();
+            int diceNumber = myClass.RollTheDice();
+
             return View();
         }
     }
