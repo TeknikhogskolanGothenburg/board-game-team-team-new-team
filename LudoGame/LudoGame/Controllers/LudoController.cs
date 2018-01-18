@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GameEngine;
+using LudoGame.Models;
 
 namespace LudoGame.Controllers
 {
@@ -14,8 +15,12 @@ namespace LudoGame.Controllers
         {
             Class1 myClass = new Class1();
             int diceNumber = myClass.RollTheDice();
+            Dice dice = new Dice
+            {
+                Value = diceNumber
+            };
 
-            return View();
+            return View(dice);
         }
     }
 }

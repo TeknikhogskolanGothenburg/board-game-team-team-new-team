@@ -1,4 +1,4 @@
-﻿
+﻿@model LudoGame.Models.Dice
 @{
     ViewBag.Title = "Index";
 }
@@ -6,4 +6,5 @@
 @Html.Partial("~/Views/Shared/DiceView.cshtml")
 
 @Html.Partial("~/Views/Shared/BoardView.cshtml")
+@Model.Value
 
