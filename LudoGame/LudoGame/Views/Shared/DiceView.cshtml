@@ -1,6 +1,6 @@
 ﻿@model LudoGame.Models.Dice
 <div class="gameInfo">
-    <div class="currentPlayer">Joe</div>
+    <div class="currentPlayer">@Model.Value</div>
     <div><button type="button" id="DiceButton" onclick = "location.href='@Url.Action("Index")'">Roll Dice!</button></div>
     <div class="dice">
         @if (Model.Value == 1)
