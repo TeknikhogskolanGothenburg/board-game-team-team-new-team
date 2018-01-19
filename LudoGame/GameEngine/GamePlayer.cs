@@ -10,10 +10,9 @@ namespace GameEngine
     {
         public string Name;
         public string Color;
-        public int Counter = 0;
-        public bool GamePieceOne = true;
-        public bool GamePieceTwo = true;
-        public bool GamePieceThree = true;
-        public bool GamePieceFour = true;
+        public GamePiece GPOne;
+        public GamePiece GPTwo;
+        public GamePiece GPThree;
+        public GamePiece GPFour;
     }
 }
