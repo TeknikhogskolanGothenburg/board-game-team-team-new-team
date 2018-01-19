@@ -1,10 +1,9 @@
-﻿@model LudoGame.Models.Dice
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Partial("~/Views/Shared/BoardView.cshtml")
 @Html.Partial("~/Views/Shared/DiceView.cshtml")
 
-@Html.Partial("~/Views/Shared/BoardView.cshtml")
-@Model.Value
+
 

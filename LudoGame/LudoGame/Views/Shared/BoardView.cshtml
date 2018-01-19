@@ -1,4 +1,5 @@
 ﻿
+@model LudoGame.Models.Overview
 <div class="board">
     <div class="wing" id="leftWing">
         <div class="field" id="52">52</div>
@@ -123,7 +124,7 @@
             <div class="brick player3" id="GamePieceFour">4</div>
         </div>
     </div>
-    <div class="start player4">
+    <div class="start player4" id="@Model.combinedPlayers.GamePlayers[0].Name">
         <div class="field">
             <div class="brick player4" id="GamePieceOne">1</div>
         </div>

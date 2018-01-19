@@ -111,6 +111,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Dice.cs" />
+    <Compile Include="Models\Players.cs" />
+    <Compile Include="Models\Overview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

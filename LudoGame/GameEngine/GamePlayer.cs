@@ -10,9 +10,9 @@ namespace GameEngine
     {
         public string Name;
         public string Color;
-        public GamePiece GPOne;
-        public GamePiece GPTwo;
-        public GamePiece GPThree;
-        public GamePiece GPFour;
+        public static GamePiece GPOne;
+        public static GamePiece GPTwo;
+        public static GamePiece GPThree;
+        public static GamePiece GPFour;
     }
 }
