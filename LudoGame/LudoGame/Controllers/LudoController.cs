@@ -13,8 +13,8 @@ namespace LudoGame.Controllers
         // GET: /Ludo/
         public ActionResult Index()
         {
-            Class1 myClass = new Class1();
-            int diceNumber = myClass.RollTheDice();
+            GameDice myDice = new GameDice();
+            int diceNumber = myDice.RollTheDice();
             Dice dice = new Dice
             {
                 Value = diceNumber
