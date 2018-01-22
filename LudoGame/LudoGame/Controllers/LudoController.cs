@@ -13,6 +13,18 @@ namespace LudoGame.Controllers
         // GET: /Ludo/
         public ActionResult Index()
         {
+            GameBoard Board = new GameBoard{};
+            for(int i = 1; i <= 52; i++)
+            {
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) });
+            }
+            for(int i = 1; i <= 5; i++)
+            {
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G" });
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R"});
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y"});
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B"});
+            }
             GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
             GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
             GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
