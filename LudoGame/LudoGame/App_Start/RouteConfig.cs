@@ -16,7 +16,7 @@ namespace LudoGame
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Ludo", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Ludo", action = "StartPage", id = UrlParameter.Optional }
             );
         }
     }

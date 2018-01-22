@@ -48,5 +48,10 @@ namespace LudoGame.Controllers
 
             return View(all);
         }
+
+        public ActionResult StartPage()
+        {
+            return View();
+        }
     }
 }
