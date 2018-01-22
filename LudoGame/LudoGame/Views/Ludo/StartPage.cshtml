@@ -1,9 +1,19 @@
-﻿
+﻿@model LudoGame.Models.Players
 @{
     ViewBag.Title = "StartPage";
 }
 
-<h2>StartPage</h2>
+<div style="background-image: url(../../Content/colored-ludo-dice-wallpaper-1920x1080.jpg); height: 1080px; width: 1920px; border: 1px solid black;">
+    <h1>Welcome to KJJ:s Ludo Game!!</h1>
+    <br />
+    <ul> WE RULE </ul>
+    <br />
 
-<h1>This is the shiet!!!</h1>
+    @using (Html.BeginForm())
+    {
+        <h4> @Html.ActionLink("Go to LudoGame", "Index")</h4>
+        <br />
 
+        <h1>HEJ!!!!!!!!!!!!!!!!!!!!!!!</h1>
+    }
+</div>
