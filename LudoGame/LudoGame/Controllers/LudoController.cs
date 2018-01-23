@@ -23,7 +23,7 @@ namespace LudoGame.Controllers
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
 
-            if (counter <= 4 && userNickName != null && userColorChoice != null)
+            if (counter < 4 && userNickName != null && userColorChoice != null)
             {
                 
                 //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
@@ -64,10 +64,10 @@ namespace LudoGame.Controllers
             }
             for(int i = 1; i <= 5; i++)
             {
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G" });
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R"});
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y"});
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B"});
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G", Position = 52 + i });
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R", Position = 52 + i });
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y", Position = 52 + i });
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B", Position = 52 + i });
             }
             
             GameDice myDice = new GameDice();
