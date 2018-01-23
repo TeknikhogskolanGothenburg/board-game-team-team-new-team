@@ -14,6 +14,8 @@ namespace LudoGame.Controllers
         // GET: /Ludo/
         public ActionResult StartPage()
         {
+            string userNickName = Request.Form["myTextBox"];
+            string userColorChoice = Request.Form["colorChoice"];
             //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
             GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
             GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
