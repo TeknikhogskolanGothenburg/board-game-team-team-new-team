@@ -1,93 +1,110 @@
 ﻿
 @model LudoGame.Models.Game
 
-@helper BrickHelper(object players, int position) { 
-if(players.positon = postion)
-{
-        <div class="brick"></div>
-}
+@helper BrickHelper(List<GameEngine.GamePlayer> players, int position)
+{ 
+    foreach (GameEngine.GamePlayer player in players)
+    {
+        if (player.One.Position == position)
+        {
+            <div class="brick"></div>
+        }
+        else if (player.Two.Position == position)
+        {
+            <div class="brick"></div>
+        }
+        else if (player.Three.Position == position)
+        {
+            <div class="brick"></div>
+        }
+        else if (player.Four.Position == position)
+        {
+            <div class="brick"></div>
+            }
+        }
     }
+
 
 <div class="board">
     <div class="wing" id="leftWing">
-        <div class="field" id="52">@BrickHelper(Model.combinedPlayers, 52)</div>
-        <div class="field player2" id="1">1</div>
-        <div class="field" id="2">2</div>
-        <div class="field" id="3">3</div>
-        <div class="field" id="4">4</div>
-        <div class="field" id="5">5</div>
-        <div class="field" id="51">51</div>
+        <div class="field" id="52">@BrickHelper(Model.Players, 52)</div>
+        <div class="field player2" id="1">@BrickHelper(Model.Players, 1)</div>
+        <div class="field" id="2">@BrickHelper(Model.Players, 2)</div>
+        <div class="field" id="3">@BrickHelper(Model.Players,3)</div>
+        <div class="field" id="4">@BrickHelper(Model.Players,4)</div>
+        <div class="field" id="5">@BrickHelper(Model.Players,5)</div>
+        <div class="field" id="51">@BrickHelper(Model.Players, 51)</div>
         <div class="field player2" id="1G">1G</div>
         <div class="field player2" id="2G">2G</div>
         <div class="field player2" id="3G">3G</div>
         <div class="field player2" id="4G">4G</div>
         <div class="field player2" id="5G">5G</div>
-        <div class="field" id="50">50</div>
-        <div class="field" id="49">49</div>
-        <div class="field" id="48">48</div>
-        <div class="field" id="47">47</div>
-        <div class="field" id="46">46</div>
-        <div class="field" id="45">45</div>
+        <div class="field" id="50">@BrickHelper(Model.Players, 50)</div>
+        <div class="field" id="49">@BrickHelper(Model.Players, 49)</div>
+        <div class="field" id="48">@BrickHelper(Model.Players, 48)</div>
+        <div class="field" id="47">@BrickHelper(Model.Players, 47)</div>
+        <div class="field" id="46">@BrickHelper(Model.Players, 46)</div>
+        <div class="field" id="45">@BrickHelper(Model.Players, 45)</div>
     </div>
     <div class="wing" id="rightWing">
-        <div class="field" id="26">26</div>
-        <div class="field player3" id="27">27</div>
-        <div class="field" id="28">28</div>
-        <div class="field" id="29">29</div>
-        <div class="field" id="30">30</div>
-        <div class="field" id="31">31</div>
-        <div class="field" id="25">25</div>
+        <div class="field" id="26">@BrickHelper(Model.Players, 26)</div>
+        <div class="field player3" id="27">@BrickHelper(Model.Players, 27)</div>
+        <div class="field" id="28">@BrickHelper(Model.Players, 28)</div>
+        <div class="field" id="29">@BrickHelper(Model.Players, 29)</div>
+        <div class="field" id="30">@BrickHelper(Model.Players, 30)</div>
+        <div class="field" id="31">@BrickHelper(Model.Players, 31)</div>
+        <div class="field" id="25">@BrickHelper(Model.Players, 25)</div>
         <div class="field player3" id="1Y">1Y</div>
         <div class="field player3" id="2Y">2Y</div>
         <div class="field player3" id="3Y">3Y</div>
         <div class="field player3" id="4Y">4Y</div>
         <div class="field player3" id="5Y">5Y</div>
-        <div class="field" id="24">24</div>
-        <div class="field" id="23">23</div>
-        <div class="field" id="22">22</div>
-        <div class="field" id="21">21</div>
-        <div class="field" id="20">20</div>
-        <div class="field" id="19">19</div>
+        <div class="field" id="24">@BrickHelper(Model.Players, 24)</div>
+        <div class="field" id="23">@BrickHelper(Model.Players, 23)</div>
+        <div class="field" id="22">@BrickHelper(Model.Players, 22)</div>
+        <div class="field" id="21">@BrickHelper(Model.Players, 21)</div>
+        <div class="field" id="20">@BrickHelper(Model.Players, 20)</div>
+        <div class="field" id="19">@BrickHelper(Model.Players, 19)</div>
     </div>
     <div class="wing" id="topWing">
-        <div class="field" id="13">13</div>
-        <div class="field player4" id="14">14</div>
-        <div class="field" id="15">15</div>
-        <div class="field" id="16">16</div>
-        <div class="field" id="17">17</div>
-        <div class="field" id="18">18</div>
-        <div class="field" id="12">12</div>
+        <div class="field" id="13">@BrickHelper(Model.Players, 13)</div>
+        <div class="field player4" id="14">@BrickHelper(Model.Players, 14)</div>
+        <div class="field" id="15">@BrickHelper(Model.Players, 15)</div>
+        <div class="field" id="16">@BrickHelper(Model.Players, 16)</div>
+        <div class="field" id="17">@BrickHelper(Model.Players, 17)</div>
+        <div class="field" id="18">@BrickHelper(Model.Players, 18)</div>
+        <div class="field" id="12">@BrickHelper(Model.Players, 12)</div>
         <div class="field player4" id="1B">1B</div>
         <div class="field player4" id="2B">2B</div>
         <div class="field player4" id="3B">3B</div>
         <div class="field player4" id="4B">4B</div>
         <div class="field player4" id="5B">5B</div>
-        <div class="field" id="11">11</div>
-        <div class="field" id="10">10</div>
-        <div class="field" id="9">9</div>
-        <div class="field" id="8">8</div>
-        <div class="field" id="7">7</div>
-        <div class="field" id="6">6</div>
+        <div class="field" id="11">@BrickHelper(Model.Players, 11)</div>
+        <div class="field" id="10">@BrickHelper(Model.Players, 10)</div>
+        <div class="field" id="9">@BrickHelper(Model.Players, 9)</div>
+        <div class="field" id="8">@BrickHelper(Model.Players, 8)</div>
+        <div class="field" id="7">@BrickHelper(Model.Players, 7)</div>
+        <div class="field" id="6">@BrickHelper(Model.Players, 6)</div>
     </div>
     <div class="wing" id="bottomWing">
-        <div class="field" id="39">39</div>
-        <div class="field player1" id="40">40</div>
-        <div class="field" id="41">41</div>
-        <div class="field" id="42">42</div>
-        <div class="field" id="43">43</div>
-        <div class="field" id="44">44</div>
-        <div class="field" id="38">38</div>
+        <div class="field" id="39">@BrickHelper(Model.Players, 39)</div>
+        <div class="field player1" id="40">@BrickHelper(Model.Players, 40)</div>
+        <div class="field" id="41">@BrickHelper(Model.Players, 41)</div>
+        <div class="field" id="42">@BrickHelper(Model.Players, 42)</div>
+        <div class="field" id="43">@BrickHelper(Model.Players, 43)</div>
+        <div class="field" id="44">@BrickHelper(Model.Players, 44)</div>
+        <div class="field" id="38">@BrickHelper(Model.Players, 38)</div>
         <div class="field player1" id="1R">1R</div>
         <div class="field player1" id="2R">2R</div>
         <div class="field player1" id="3R">3R</div>
         <div class="field player1" id="4R">4R</div>
         <div class="field player1" id="5R">5R</div>
-        <div class="field" id="37">37</div>
-        <div class="field" id="36">36</div>
-        <div class="field" id="35">35</div>
-        <div class="field" id="34">34</div>
-        <div class="field" id="33">33</div>
-        <div class="field" id="32">32</div>
+        <div class="field" id="37">@BrickHelper(Model.Players, 37)</div>
+        <div class="field" id="36">@BrickHelper(Model.Players, 36)</div>
+        <div class="field" id="35">@BrickHelper(Model.Players, 35)</div>
+        <div class="field" id="34">@BrickHelper(Model.Players, 34)</div>
+        <div class="field" id="33">@BrickHelper(Model.Players, 33)</div>
+        <div class="field" id="32">@BrickHelper(Model.Players, 32)</div>
     </div>
     <div class="goal"></div>
     <div class="start player1">
@@ -132,7 +149,7 @@ if(players.positon = postion)
             <div class="brick player3" id="GamePieceFour">4</div>
         </div>
     </div>
-    <div class="start player4" id="@Model.combinedPlayers.GamePlayers[0].Name">
+    <div class="start player4" id="@Model.Players[0].Name">
         <div class="field">
             <div class="brick player4" id="GamePieceOne">1</div>
         </div>

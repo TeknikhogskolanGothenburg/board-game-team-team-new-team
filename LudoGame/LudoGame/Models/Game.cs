@@ -8,10 +8,9 @@ namespace LudoGame.Models
 {
     public class Game
     {
-        public List<GameEngine.GamePlayer> Players;
-        public GameEngine.GameDice Dice;
-        public GameEngine.GamePiece Peice;
-        public GameEngine.GameBoard Board;
-        public GameEngine.GameSquare Square;
+        public List<GameEngine.GamePlayer> Players = new List<GameEngine.GamePlayer> { };
+        public GameEngine.GameDice Dice = new GameDice { };
+        public GameEngine.GameBoard Board = new GameBoard { };
+        public GameEngine.GameSquare Square = new GameSquare { };
     }
 }

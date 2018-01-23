@@ -8,6 +8,7 @@ namespace GameEngine
 {
     public class GameDice
     {
+        public int Value = 1;
         public int RollTheDice()
         {
             Random num = new Random();

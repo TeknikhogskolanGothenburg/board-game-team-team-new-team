@@ -10,16 +10,21 @@ namespace LudoGame.Controllers
 {
     public class LudoController : Controller
     {
-        public Game myGame = new Game { };
+        public static Game myGame = new Game { };
         // GET: /Ludo/
         public ActionResult StartPage()
         {
-            myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
-            return View();
-            //GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
-            //GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
-            //GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
-            //GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
+            //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
+            GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
+            GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
+            GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
+            GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
+            myGame.Players.Add(p1);
+            myGame.Players.Add(p2);
+            myGame.Players.Add(p3);
+            myGame.Players.Add(p4);
+            return View(myGame);
+            
 
             //List<GamePlayer> onlinePlayers = new List<GamePlayer> { };
             //onlinePlayers.Add(p1);
@@ -45,7 +50,7 @@ namespace LudoGame.Controllers
             }
             
             GameDice myDice = new GameDice();
-            int diceNumber = myDice.RollTheDice();
+            myDice.Value = myDice.RollTheDice();
             myGame.Dice = myDice;
             
             return View(myGame);
