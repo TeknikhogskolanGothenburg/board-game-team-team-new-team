@@ -11,12 +11,17 @@ namespace LudoGame.Controllers
     public class LudoController : Controller
     {
         // GET: /Ludo/
+        public ActionResult StartPage()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             GameBoard Board = new GameBoard{};
             for(int i = 1; i <= 52; i++)
             {
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) });
+                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i), Position = i });
             }
             for(int i = 1; i <= 5; i++)
             {
@@ -25,33 +30,27 @@ namespace LudoGame.Controllers
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y"});
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B"});
             }
-            GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
-            GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
-            GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
-            GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
+            //GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
+            //GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
+            //GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
+            //GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
 
-            Players onlinePlayers = new Players{};
-            onlinePlayers.GamePlayers.Add(p1);
-            onlinePlayers.GamePlayers.Add(p2);
-            onlinePlayers.GamePlayers.Add(p3);
-            onlinePlayers.GamePlayers.Add(p4);
+            //List<GamePlayer> onlinePlayers = new List<GamePlayer> { };
+            //onlinePlayers.Add(p1);
+            //onlinePlayers.Add(p2);
+            //onlinePlayers.Add(p3);
+            //onlinePlayers.Add(p4);
 
             GameDice myDice = new GameDice();
             int diceNumber = myDice.RollTheDice();
-            Dice dice = new Dice
-            {
-                Value = diceNumber
-            };
-            Overview all = new Overview { };
-            all.combinedDice = dice;
-            all.combinedPlayers = onlinePlayers;
+            
+            Game myGame = new Game { };
+            myGame.Dice = myDice;
+            //myGame.Players = onlinePlayers;
 
-            return View(all);
+            return View(myGame);
         }
 
-        public ActionResult StartPage()
-        {
-            return View();
-        }
+       
     }
 }

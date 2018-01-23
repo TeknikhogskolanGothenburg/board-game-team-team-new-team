@@ -10,5 +10,6 @@ namespace GameEngine
     {
         public bool InPlay = true;
         public int Counter = 0;
+        public int Position;
     }
 }

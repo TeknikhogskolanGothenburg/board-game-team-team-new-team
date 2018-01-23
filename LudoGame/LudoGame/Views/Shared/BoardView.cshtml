@@ -1,8 +1,16 @@
 ﻿
-@model LudoGame.Models.Overview
+@model LudoGame.Models.Game
+
+@helper BrickHelper(object players, int position) { 
+if(players.positon = postion)
+{
+        <div class="brick"></div>
+}
+    }
+
 <div class="board">
     <div class="wing" id="leftWing">
-        <div class="field" id="52">52</div>
+        <div class="field" id="52">@BrickHelper(Model.combinedPlayers, 52)</div>
         <div class="field player2" id="1">1</div>
         <div class="field" id="2">2</div>
         <div class="field" id="3">3</div>

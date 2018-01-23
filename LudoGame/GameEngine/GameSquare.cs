@@ -11,5 +11,6 @@ namespace GameEngine
         //a numbered name using just an integer till the last square, t.ex
         // 1, 2, 3, 1Y, 2Y
         public string NumberedName;
+        public int Position;
     }
 }
