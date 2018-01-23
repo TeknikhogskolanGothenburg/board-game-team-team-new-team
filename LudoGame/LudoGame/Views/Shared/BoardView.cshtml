@@ -2,27 +2,50 @@
 @model LudoGame.Models.Game
 
 @helper BrickHelper(List<GameEngine.GamePlayer> players, int position)
-{ 
-    foreach (GameEngine.GamePlayer player in players)
     {
-        if (player.One.Position == position)
+        foreach (GameEngine.GamePlayer player in players)
         {
-            <div class="brick"></div>
-        }
-        else if (player.Two.Position == position)
-        {
-            <div class="brick"></div>
-        }
-        else if (player.Three.Position == position)
-        {
-            <div class="brick"></div>
-        }
-        else if (player.Four.Position == position)
-        {
-            <div class="brick"></div>
+            if (player.One.Position == position)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Two.Position == position)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Three.Position == position)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Four.Position == position)
+            {
+                <div class="brick"></div>
             }
         }
-    }
+}
+
+@helper BrickColorHelper(List<GameEngine.GamePlayer> players, int position, string color)
+    {
+        foreach (GameEngine.GamePlayer player in players)
+        {
+            if (player.One.Position == position && player.Color == color)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Two.Position == position && player.Color == color)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Three.Position == position && player.Color == color)
+            {
+                <div class="brick"></div>
+            }
+            else if (player.Four.Position == position && player.Color == color)
+            {
+                <div class="brick"></div>
+            }
+        }
+}
 
 
 <div class="board">
@@ -30,15 +53,15 @@
         <div class="field" id="52">@BrickHelper(Model.Players, 52)</div>
         <div class="field player2" id="1">@BrickHelper(Model.Players, 1)</div>
         <div class="field" id="2">@BrickHelper(Model.Players, 2)</div>
-        <div class="field" id="3">@BrickHelper(Model.Players,3)</div>
-        <div class="field" id="4">@BrickHelper(Model.Players,4)</div>
-        <div class="field" id="5">@BrickHelper(Model.Players,5)</div>
+        <div class="field" id="3">@BrickHelper(Model.Players, 3)</div>
+        <div class="field" id="4">@BrickHelper(Model.Players, 4)</div>
+        <div class="field" id="5">@BrickHelper(Model.Players, 5)</div>
         <div class="field" id="51">@BrickHelper(Model.Players, 51)</div>
-        <div class="field player2" id="1G">1G</div>
-        <div class="field player2" id="2G">2G</div>
-        <div class="field player2" id="3G">3G</div>
-        <div class="field player2" id="4G">4G</div>
-        <div class="field player2" id="5G">5G</div>
+        <div class="field player2" id="1G">@BrickColorHelper(Model.Players, 53, "Green")</div>
+        <div class="field player2" id="2G">@BrickColorHelper(Model.Players, 54, "Green")</div>
+        <div class="field player2" id="3G">@BrickColorHelper(Model.Players, 55, "Green")</div>
+        <div class="field player2" id="4G">@BrickColorHelper(Model.Players, 56, "Green")</div>
+        <div class="field player2" id="5G">@BrickColorHelper(Model.Players, 57, "Green")</div>
         <div class="field" id="50">@BrickHelper(Model.Players, 50)</div>
         <div class="field" id="49">@BrickHelper(Model.Players, 49)</div>
         <div class="field" id="48">@BrickHelper(Model.Players, 48)</div>
@@ -54,11 +77,11 @@
         <div class="field" id="30">@BrickHelper(Model.Players, 30)</div>
         <div class="field" id="31">@BrickHelper(Model.Players, 31)</div>
         <div class="field" id="25">@BrickHelper(Model.Players, 25)</div>
-        <div class="field player3" id="1Y">1Y</div>
-        <div class="field player3" id="2Y">2Y</div>
-        <div class="field player3" id="3Y">3Y</div>
-        <div class="field player3" id="4Y">4Y</div>
-        <div class="field player3" id="5Y">5Y</div>
+        <div class="field player3" id="1Y">@BrickColorHelper(Model.Players, 53, "Yellow")</div>
+        <div class="field player3" id="2Y">@BrickColorHelper(Model.Players, 54, "Yellow")</div>
+        <div class="field player3" id="3Y">@BrickColorHelper(Model.Players, 55, "Yellow")</div>
+        <div class="field player3" id="4Y">@BrickColorHelper(Model.Players, 56, "Yellow")</div>
+        <div class="field player3" id="5Y">@BrickColorHelper(Model.Players, 57, "Yellow")</div>
         <div class="field" id="24">@BrickHelper(Model.Players, 24)</div>
         <div class="field" id="23">@BrickHelper(Model.Players, 23)</div>
         <div class="field" id="22">@BrickHelper(Model.Players, 22)</div>
@@ -74,11 +97,11 @@
         <div class="field" id="17">@BrickHelper(Model.Players, 17)</div>
         <div class="field" id="18">@BrickHelper(Model.Players, 18)</div>
         <div class="field" id="12">@BrickHelper(Model.Players, 12)</div>
-        <div class="field player4" id="1B">1B</div>
-        <div class="field player4" id="2B">2B</div>
-        <div class="field player4" id="3B">3B</div>
-        <div class="field player4" id="4B">4B</div>
-        <div class="field player4" id="5B">5B</div>
+        <div class="field player4" id="1B">@BrickColorHelper(Model.Players, 53, "Blue")</div>
+        <div class="field player4" id="2B">@BrickColorHelper(Model.Players, 53, "Blue")</div>
+        <div class="field player4" id="3B">@BrickColorHelper(Model.Players, 53, "Blue")</div>
+        <div class="field player4" id="4B">@BrickColorHelper(Model.Players, 53, "Blue")</div>
+        <div class="field player4" id="5B">@BrickColorHelper(Model.Players, 57, "Blue")</div>
         <div class="field" id="11">@BrickHelper(Model.Players, 11)</div>
         <div class="field" id="10">@BrickHelper(Model.Players, 10)</div>
         <div class="field" id="9">@BrickHelper(Model.Players, 9)</div>
@@ -94,11 +117,11 @@
         <div class="field" id="43">@BrickHelper(Model.Players, 43)</div>
         <div class="field" id="44">@BrickHelper(Model.Players, 44)</div>
         <div class="field" id="38">@BrickHelper(Model.Players, 38)</div>
-        <div class="field player1" id="1R">1R</div>
-        <div class="field player1" id="2R">2R</div>
-        <div class="field player1" id="3R">3R</div>
-        <div class="field player1" id="4R">4R</div>
-        <div class="field player1" id="5R">5R</div>
+        <div class="field player1" id="1R">@BrickColorHelper(Model.Players, 53, "Red")</div>
+        <div class="field player1" id="2R">@BrickColorHelper(Model.Players, 54, "Red")</div>
+        <div class="field player1" id="3R">@BrickColorHelper(Model.Players, 55, "Red")</div>
+        <div class="field player1" id="4R">@BrickColorHelper(Model.Players, 56, "Red")</div>
+        <div class="field player1" id="5R">@BrickColorHelper(Model.Players, 57, "Red")</div>
         <div class="field" id="37">@BrickHelper(Model.Players, 37)</div>
         <div class="field" id="36">@BrickHelper(Model.Players, 36)</div>
         <div class="field" id="35">@BrickHelper(Model.Players, 35)</div>
