@@ -53,14 +53,6 @@ namespace LudoGame.Controllers
                 }
             }
             return View(myGame);
-            
-
-            //List<GamePlayer> onlinePlayers = new List<GamePlayer> { };
-            //onlinePlayers.Add(p1);
-            //onlinePlayers.Add(p2);
-            //onlinePlayers.Add(p3);
-            //onlinePlayers.Add(p4);
-            //myGame.Players = onlinePlayers;
         }
 
         public ActionResult Index()

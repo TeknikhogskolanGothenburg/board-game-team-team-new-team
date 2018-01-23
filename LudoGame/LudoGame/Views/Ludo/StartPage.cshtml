@@ -10,48 +10,50 @@
     <br />
 
     @using (Html.BeginForm())
+    {
+        <div>
+            @*@Html.Label("Select a new game:")
+            @Html.CheckBox("SelectLabel", false)
+            <br />
+            @Html.Label("Join existing game:")
+            @Html.CheckBox("JoinLabel", false)
+            <br />
+            <br />*@
+            @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
+            {
+                <br />
+                <p>Choose a color!</p>
+                <select class="form-control" id="colorChoice" name="colorChoice">
+                    @if (LudoGame.Controllers.LudoController.red == false)
+                    {
+                        <option>Red</option>
+                    }
+                    @if (LudoGame.Controllers.LudoController.yellow == false)
+                    {
+                        <option>Yellow</option>
+                    }
+                    @if (LudoGame.Controllers.LudoController.blue == false)
+                    {
+                        <option>Blue</option>
+                    }
+                    @if (LudoGame.Controllers.LudoController.green == false)
+                    {
+                        <option>Green</option>
+                    }
+                </select>
+                <br />
+                <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
+                <br />
+                <input type="submit" name="colorSubmit" value="Enter" />
+            }
+
+        </div>
+    }
+    @if (LudoGame.Controllers.LudoController.myGame.Players.Count >= 2)
      {
-    <div>
-        @Html.Label("Select a new game:")
-        @Html.CheckBox("SelectLabel", false)
         <br />
-        @Html.Label("Join existing game:")
-        @Html.CheckBox("JoinLabel", false)
+        <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
         <br />
-        <br />
-        @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
-         {
-            <br />
-            <p>Choose a color!</p>
-            <select class="form-control" id="colorChoice" name="colorChoice">
-                @if (LudoGame.Controllers.LudoController.red == false)
-                 {
-                    <option>Red</option>
-                 }
-                @if (LudoGame.Controllers.LudoController.yellow == false)
-                 {
-                    <option>Yellow</option>
-                 }
-                @if (LudoGame.Controllers.LudoController.blue == false)
-                 {
-                    <option>Blue</option>
-                 }
-                @if (LudoGame.Controllers.LudoController.green == false)
-                 {
-                    <option>Green</option>
-                 }
-            </select>
-            <br />
-            <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
-            <br />
-            <input type="submit" name="colorSubmit" value="Enter" />
-         }
-
-            </div>
-            <br />
-            <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
-            <br />
-
-            <h3>HEJ!!!!!!!!!!!!!!!!!!!!!!!</h3>
      }
+    <h3>HEJ!!!!!!!!!!!!!!!!!!!!!!!</h3>
 </div>

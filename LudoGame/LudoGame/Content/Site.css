@@ -15,4 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
+#wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
 
