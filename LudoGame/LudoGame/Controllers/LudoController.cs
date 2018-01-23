@@ -14,6 +14,17 @@ namespace LudoGame.Controllers
         public ActionResult StartPage()
         {
             return View();
+            //GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
+            //GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
+            //GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
+            //GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
+
+            //List<GamePlayer> onlinePlayers = new List<GamePlayer> { };
+            //onlinePlayers.Add(p1);
+            //onlinePlayers.Add(p2);
+            //onlinePlayers.Add(p3);
+            //onlinePlayers.Add(p4);
+            //myGame.Players = onlinePlayers;
         }
 
         public ActionResult Index()
@@ -30,24 +41,13 @@ namespace LudoGame.Controllers
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y"});
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B"});
             }
-            //GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
-            //GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
-            //GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
-            //GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
-
-            //List<GamePlayer> onlinePlayers = new List<GamePlayer> { };
-            //onlinePlayers.Add(p1);
-            //onlinePlayers.Add(p2);
-            //onlinePlayers.Add(p3);
-            //onlinePlayers.Add(p4);
-
+            
             GameDice myDice = new GameDice();
             int diceNumber = myDice.RollTheDice();
             
             Game myGame = new Game { };
             myGame.Dice = myDice;
-            //myGame.Players = onlinePlayers;
-
+            
             return View(myGame);
         }
 
