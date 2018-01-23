@@ -11,20 +11,47 @@ namespace LudoGame.Controllers
     public class LudoController : Controller
     {
         public static Game myGame = new Game { };
+        public static int counter = 0;
+        public static bool red = false;
+        public static bool green = false;
+        public static bool yellow = false;
+        public static bool  blue = false;
+
         // GET: /Ludo/
         public ActionResult StartPage()
         {
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
-            //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
-            GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
-            GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
-            GamePlayer p3 = new GamePlayer { Name = "Kalle", Color = "Yellow" };
-            GamePlayer p4 = new GamePlayer { Name = "TheBetterJoe", Color = "Green" };
-            myGame.Players.Add(p1);
-            myGame.Players.Add(p2);
-            myGame.Players.Add(p3);
-            myGame.Players.Add(p4);
+
+            if (counter <= 4 && userNickName != null && userColorChoice != null)
+            {
+                
+                //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
+                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice });
+                counter++;
+            }
+            if (myGame.Players.Count > 0)
+            {
+                foreach (GameEngine.GamePlayer player in LudoGame.Controllers.LudoController.myGame.Players)
+                {
+                    if (player.Color == "Red")
+                    {
+                        @LudoGame.Controllers.LudoController.red = true;
+                    }
+                    if (player.Color == "Yellow")
+                    {
+                        @LudoGame.Controllers.LudoController.yellow = true;
+                    }
+                    if (player.Color == "Blue")
+                    {
+                        @LudoGame.Controllers.LudoController.blue = true;
+                    }
+                    if (player.Color == "Green")
+                    {
+                        @LudoGame.Controllers.LudoController.green = true;
+                    }
+                }
+            }
             return View(myGame);
             
 
