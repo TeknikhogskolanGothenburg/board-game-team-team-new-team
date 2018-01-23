@@ -21,33 +21,33 @@
         <br />
         @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
          {
-        <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
-        <input type="submit" name="nickSubmit" value="Enter" />
-        <br />
-        <br />
-        <p>Choose a color!</p>
-        <select class="form-control" id="colorChoice" name="colorChoice">
-            @if (LudoGame.Controllers.LudoController.red == false)
-             {
-                <option>Red</option>
-             }
-            @if (LudoGame.Controllers.LudoController.yellow == false)
-             {
-                <option>Yellow</option>
-             }
-            @if (LudoGame.Controllers.LudoController.blue == false)
-             {
-                <option>Blue</option>
-             }
-            @if (LudoGame.Controllers.LudoController.green == false)
-             {
-                <option>Green</option>
-             }
-        </select>
-        <input type="submit" name="colorSubmit" value="Enter" />
+            <br />
+            <p>Choose a color!</p>
+            <select class="form-control" id="colorChoice" name="colorChoice">
+                @if (LudoGame.Controllers.LudoController.red == false)
+                 {
+                    <option>Red</option>
+                 }
+                @if (LudoGame.Controllers.LudoController.yellow == false)
+                 {
+                    <option>Yellow</option>
+                 }
+                @if (LudoGame.Controllers.LudoController.blue == false)
+                 {
+                    <option>Blue</option>
+                 }
+                @if (LudoGame.Controllers.LudoController.green == false)
+                 {
+                    <option>Green</option>
+                 }
+            </select>
+            <br />
+            <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
+            <br />
+            <input type="submit" name="colorSubmit" value="Enter" />
          }
 
-    </div>
+            </div>
             <br />
             <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
             <br />
