@@ -11,17 +11,29 @@
 
     @using (Html.BeginForm())
      {
-        <div>
-            @Html.Label("Select a new game:")
-            @Html.CheckBox("SelectLabel", false)
-            <br />
-            @Html.Label("Join existing game:")
-            @Html.CheckBox("JoinLabel", false)
-            <br />
-            <input type="text" name="Enter Information Here"/>
-            <input type="submit" name="submit"/>
+    <div>
+        @Html.Label("Select a new game:")
+        @Html.CheckBox("SelectLabel", false)
+        <br />
+        @Html.Label("Join existing game:")
+        @Html.CheckBox("JoinLabel", false)
+        <br />
+        <br />
 
-        </div>
+        <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
+        <input type="submit" name="nickSubmit" value="Enter" />
+        <br />
+        <br />
+        <p>Choose a color!</p>
+        <select class="form-control" id="colorChoice" name="colorChoice">
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Blue</option>
+            <option>Green</option>
+        </select>
+        <input type="submit" name="colorSubmit" value="Enter" />
+
+    </div>
             <br />
             <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
             <br />
