@@ -10,9 +10,11 @@ namespace LudoGame.Controllers
 {
     public class LudoController : Controller
     {
+        public Game myGame = new Game { };
         // GET: /Ludo/
         public ActionResult StartPage()
         {
+            myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
             return View();
             //GamePlayer p1 = new GamePlayer { Name = "Jakob", Color = "Red" };
             //GamePlayer p2 = new GamePlayer { Name = "Joe", Color = "Blue" };
@@ -44,8 +46,6 @@ namespace LudoGame.Controllers
             
             GameDice myDice = new GameDice();
             int diceNumber = myDice.RollTheDice();
-            
-            Game myGame = new Game { };
             myGame.Dice = myDice;
             
             return View(myGame);
