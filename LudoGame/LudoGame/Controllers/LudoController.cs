@@ -15,7 +15,7 @@ namespace LudoGame.Controllers
         public static bool red = false;
         public static bool green = false;
         public static bool yellow = false;
-        public static bool  blue = false;
+        public static bool blue = false;
 
         // GET: /Ludo/
         public ActionResult StartPage()
@@ -76,6 +76,18 @@ namespace LudoGame.Controllers
             myGame.Dice = myDice;
             
             return View(myGame);
+        }
+        
+        public ActionResult MovePiece()
+        {
+            if(myGame.Players[0].Turn == true)
+            {
+                if(myGame.Players[0].One.InPlay == true)
+                {
+                    myGame.Players[0].One.Position += myGame.Dice.Value;
+                }
+            }
+            return RedirectToAction("Index", "Ludo");
         }
 
        

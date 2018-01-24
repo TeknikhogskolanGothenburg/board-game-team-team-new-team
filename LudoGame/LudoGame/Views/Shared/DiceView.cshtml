@@ -2,6 +2,7 @@
 <div class="gameInfo">
     <div class="currentPlayer"></div>
     <div><button type="button" id="DiceButton" onclick="location.href='@Url.Action("Index")'">Roll Dice!</button></div>
+    <div><button type="button" id="MovePiece" onclick="location.href='@Url.Action("MovePiece")'">Move the Piece</button></div>
     <div class="dice">
         @if (Model.Dice.Value == 1)
         {
