@@ -102,7 +102,7 @@ namespace LudoGame.Controllers
                             myGame.Players[0].One.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position  < 59)
+                    else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position  < 53)
                     {
                         myGame.Players[0].One.Position += myGame.Dice.Value;
                     }
@@ -136,7 +136,7 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Two.Position = 27;
                         }
                     }
-                    else if(myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position < 59)
+                    else if(myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position < 53)
                     {
                         myGame.Players[0].Two.Position += myGame.Dice.Value;
                     }
@@ -170,7 +170,7 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Three.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position > 59)
+                    else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position > 53)
                     {
                         myGame.Players[0].Three.Position += myGame.Dice.Value;
                     }
@@ -204,7 +204,7 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Four.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position > 59)
+                    else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position > 53)
                     {
                         myGame.Players[0].Four.Position += myGame.Dice.Value;
                     }
