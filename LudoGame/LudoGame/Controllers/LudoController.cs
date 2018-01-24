@@ -58,27 +58,26 @@ namespace LudoGame.Controllers
 
         public ActionResult Index()
         {
-            GameBoard Board = new GameBoard{};
-            for(int i = 1; i <= 52; i++)
-            {
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i), Position = i });
-            }
-            for(int i = 1; i <= 5; i++)
-            {
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G", Position = 52 + i });
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R", Position = 52 + i });
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y", Position = 52 + i });
-                Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B", Position = 52 + i });
-            }
+            //GameBoard Board = new GameBoard{};
+            //for(int i = 1; i <= 52; i++)
+            //{
+            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i), Position = i });
+            //}
+            //for(int i = 1; i <= 5; i++)
+            //{
+            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G", Position = 52 + i });
+            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R", Position = 52 + i });
+            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y", Position = 52 + i });
+            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B", Position = 52 + i });
+            //}
             return View(myGame);
         }
         public ActionResult RollDice()
         {
             myGame.Dice.Value = myGame.Dice.RollTheDice();
             return RedirectToAction("Index", "Ludo");
-
         }
-        public ActionResult MovePiece()
+        public ActionResult MovePiece1()
         {
             if(myGame.Players[0].Turn == true)
             {
@@ -89,7 +88,40 @@ namespace LudoGame.Controllers
             }
             return RedirectToAction("Index", "Ludo");
         }
+        public ActionResult MovePiece2()
+        {
+            if (myGame.Players[0].Turn == true)
+            {
+                if (myGame.Players[0].Two.InPlay == true)
+                {
+                    myGame.Players[0].Two.Position += myGame.Dice.Value;
+                }
+            }
+            return RedirectToAction("Index", "Ludo");
+        }
+        public ActionResult MovePiece3()
+        {
+            if (myGame.Players[0].Turn == true)
+            {
+                if (myGame.Players[0].Three.InPlay == true)
+                {
+                    myGame.Players[0].Three.Position += myGame.Dice.Value;
+                }
+            }
+            return RedirectToAction("Index", "Ludo");
+        }
+        public ActionResult MovePiece4()
+        {
+            if (myGame.Players[0].Turn == true)
+            {
+                if (myGame.Players[0].Four.InPlay == true)
+                {
+                    myGame.Players[0].Four.Position += myGame.Dice.Value;
+                }
+            }
+            return RedirectToAction("Index", "Ludo");
+        }
 
-       
+
     }
 }
