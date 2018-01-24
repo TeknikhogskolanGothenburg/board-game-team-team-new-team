@@ -10,6 +10,7 @@ namespace GameEngine
     {
         public string Name;
         public string Color;
+        public int PlayerID;
         public bool Turn = false;
         public GamePiece One = new GamePiece{InPlay = true, Counter = 0, Position = 0};
         public GamePiece Two = new GamePiece { InPlay = true, Counter = 0, Position = 0 };

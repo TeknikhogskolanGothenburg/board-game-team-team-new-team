@@ -23,6 +23,15 @@ namespace LudoGame.Controllers
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
 
+            if(Request.Cookies["UserCookie"] == null)
+            {
+                HttpCookie myCookie = new HttpCookie("UserCookie");
+                Guid guid = Guid.NewGuid();
+                myCookie.Value = guid.ToString();
+                myCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(myCookie);
+            }
+
             if (counter < 4 && userNickName != null && userColorChoice != null)
             {
                 
