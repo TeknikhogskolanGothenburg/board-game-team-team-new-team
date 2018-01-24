@@ -90,44 +90,177 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-                if(myGame.Players[0].One.InPlay == true)
+                if (myGame.Players[0].Color == "Red")
                 {
-                    if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
+                    if (myGame.Players[0].One.InPlay == true)
                     {
-                        if (myGame.Players[0].Color == "Red")
+                        if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].One.Position = 40;
                         }
-                        else if (myGame.Players[0].Color == "Green")
+                        else if (myGame.Players[0].One.Position >= 40 && myGame.Players[0].One.Position <= 52)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if(myGame.Players[0].One.Position > 52)
+                            {
+                                int x = myGame.Players[0].One.Position - 52;
+                                myGame.Players[0].One.Position = 0;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position <= 38)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if(myGame.Players[0].One.Position > 38)
+                            {
+                                int x = myGame.Players[0].One.Position - 38;
+                                myGame.Players[0].One.Position = 52;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].One.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].One.Position) - 58);
+                            myGame.Players[0].One.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].One.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].One.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Green")
+                {
+                    if (myGame.Players[0].One.InPlay == true)
+                    {
+                        if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].One.Position = 1;
                         }
-                        else if (myGame.Players[0].Color == "Blue")
+                        else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position <= 51)
                         {
-                            myGame.Players[0].One.Position = 14;
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].One.Position >= 52)
+                            {
+                                int x = myGame.Players[0].One.Position - 51;
+                                myGame.Players[0].One.Position = 52;
+                                myGame.Players[0].One.Position += x;
+                            }
                         }
-                        else if (myGame.Players[0].Color == "Yellow")
+                        else if (myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].One.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].One.Position) - 58);
+                            myGame.Players[0].One.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].One.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].One.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Yellow")
+                {
+                    if (myGame.Players[0].One.InPlay == true)
+                    {
+                        if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].One.Position = 27;
                         }
-                    }
-                    else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position  <= 52)
-                    {
-                        myGame.Players[0].One.Position += myGame.Dice.Value;
-                    }
-                    else if(myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
-                    {
-                        myGame.Players[0].One.Position += myGame.Dice.Value;
-                    }
+                        else if (myGame.Players[0].One.Position >= 27 && myGame.Players[0].One.Position <= 52)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].One.Position > 52)
+                            {
+                                int x = myGame.Players[0].One.Position - 52;
+                                myGame.Players[0].One.Position = 0;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position <= 25)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].One.Position > 25)
+                            {
+                                int x = myGame.Players[0].One.Position - 25;
+                                myGame.Players[0].One.Position = 52;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                        }
 
-                    if (myGame.Players[0].One.Position > 58)
-                    {
-                        int x = ((myGame.Players[0].One.Position) - 58);
-                        myGame.Players[0].One.Position = (58 - x);
+                        if (myGame.Players[0].One.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].One.Position) - 58);
+                            myGame.Players[0].One.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].One.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].One.InPlay = false;
+                        }
                     }
-                    else if (myGame.Players[0].One.Position == 58)
+                }
+
+                if (myGame.Players[0].Color == "Blue")
+                {
+                    if (myGame.Players[0].One.InPlay == true)
                     {
-                        myGame.Players[0].One.InPlay = false;
+                        if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
+                        {
+                            myGame.Players[0].One.Position = 14;
+                        }
+                        else if (myGame.Players[0].One.Position >= 14 && myGame.Players[0].One.Position <= 52)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].One.Position > 52)
+                            {
+                                int x = myGame.Players[0].One.Position - 52;
+                                myGame.Players[0].One.Position = 0;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position <= 12)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].One.Position > 12)
+                            {
+                                int x = myGame.Players[0].One.Position - 12;
+                                myGame.Players[0].One.Position = 52;
+                                myGame.Players[0].One.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
+                        {
+                            myGame.Players[0].One.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].One.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].One.Position) - 58);
+                            myGame.Players[0].One.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].One.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].One.InPlay = false;
+                        }
                     }
                 }
             }
@@ -137,44 +270,177 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-                if (myGame.Players[0].Two.InPlay == true)
+                if (myGame.Players[0].Color == "Red")
                 {
-                    if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
+                    if (myGame.Players[0].Two.InPlay == true)
                     {
-                        if (myGame.Players[0].Color == "Red")
+                        if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Two.Position = 40;
                         }
-                        else if (myGame.Players[0].Color == "Green")
+                        else if (myGame.Players[0].Two.Position >= 40 && myGame.Players[0].Two.Position <= 52)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 52)
+                            {
+                                int x = myGame.Players[0].Two.Position - 52;
+                                myGame.Players[0].Two.Position = 0;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 38)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 38)
+                            {
+                                int x = myGame.Players[0].Two.Position - 38;
+                                myGame.Players[0].Two.Position = 52;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Two.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Two.Position) - 58);
+                            myGame.Players[0].Two.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Two.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Two.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Green")
+                {
+                    if (myGame.Players[0].Two.InPlay == true)
+                    {
+                        if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Two.Position = 1;
                         }
-                        else if (myGame.Players[0].Color == "Blue")
+                        else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 51)
                         {
-                            myGame.Players[0].Two.Position = 14;
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position >= 52)
+                            {
+                                int x = myGame.Players[0].Two.Position - 51;
+                                myGame.Players[0].Two.Position = 52;
+                                myGame.Players[0].Two.Position += x;
+                            }
                         }
-                        else if (myGame.Players[0].Color == "Yellow")
+                        else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Two.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Two.Position) - 58);
+                            myGame.Players[0].Two.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Two.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Two.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Yellow")
+                {
+                    if (myGame.Players[0].Two.InPlay == true)
+                    {
+                        if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Two.Position = 27;
                         }
-                    }
-                    else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 52)
-                    {
-                        myGame.Players[0].Two.Position += myGame.Dice.Value;
-                    }
-                    else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
-                    {
-                        myGame.Players[0].Two.Position += myGame.Dice.Value;
-                    }
+                        else if (myGame.Players[0].Two.Position >= 27 && myGame.Players[0].Two.Position <= 52)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 52)
+                            {
+                                int x = myGame.Players[0].Two.Position - 52;
+                                myGame.Players[0].Two.Position = 0;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 25)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 25)
+                            {
+                                int x = myGame.Players[0].Two.Position - 25;
+                                myGame.Players[0].Two.Position = 52;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                        }
 
-                    if (myGame.Players[0].Two.Position > 58)
-                    {
-                        int x = ((myGame.Players[0].Two.Position) - 58);
-                        myGame.Players[0].Two.Position = (58 - x);
+                        if (myGame.Players[0].Two.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Two.Position) - 58);
+                            myGame.Players[0].Two.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Two.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Two.InPlay = false;
+                        }
                     }
-                    else if (myGame.Players[0].Two.Position == 58)
+                }
+
+                if (myGame.Players[0].Color == "Blue")
+                {
+                    if (myGame.Players[0].Two.InPlay == true)
                     {
-                        myGame.Players[0].Two.InPlay = false;
+                        if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
+                        {
+                            myGame.Players[0].Two.Position = 14;
+                        }
+                        else if (myGame.Players[0].Two.Position >= 14 && myGame.Players[0].Two.Position <= 52)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 52)
+                            {
+                                int x = myGame.Players[0].Two.Position - 52;
+                                myGame.Players[0].Two.Position = 0;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 12)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Two.Position > 12)
+                            {
+                                int x = myGame.Players[0].Two.Position - 12;
+                                myGame.Players[0].Two.Position = 52;
+                                myGame.Players[0].Two.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
+                        {
+                            myGame.Players[0].Two.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Two.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Two.Position) - 58);
+                            myGame.Players[0].Two.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Two.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Two.InPlay = false;
+                        }
                     }
                 }
             }
@@ -184,44 +450,177 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-                if (myGame.Players[0].Three.InPlay == true)
+                if (myGame.Players[0].Color == "Red")
                 {
-                    if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
+                    if (myGame.Players[0].Three.InPlay == true)
                     {
-                        if (myGame.Players[0].Color == "Red")
+                        if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Three.Position = 40;
                         }
-                        else if (myGame.Players[0].Color == "Green")
+                        else if (myGame.Players[0].Three.Position >= 40 && myGame.Players[0].Three.Position <= 52)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 52)
+                            {
+                                int x = myGame.Players[0].Three.Position - 52;
+                                myGame.Players[0].Three.Position = 0;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 38)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 38)
+                            {
+                                int x = myGame.Players[0].Three.Position - 38;
+                                myGame.Players[0].Three.Position = 52;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Three.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Three.Position) - 58);
+                            myGame.Players[0].Three.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Three.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Three.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Green")
+                {
+                    if (myGame.Players[0].Three.InPlay == true)
+                    {
+                        if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Three.Position = 1;
                         }
-                        else if (myGame.Players[0].Color == "Blue")
+                        else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 51)
                         {
-                            myGame.Players[0].Three.Position = 14;
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position >= 52)
+                            {
+                                int x = myGame.Players[0].Three.Position - 51;
+                                myGame.Players[0].Three.Position = 52;
+                                myGame.Players[0].Three.Position += x;
+                            }
                         }
-                        else if (myGame.Players[0].Color == "Yellow")
+                        else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Three.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Three.Position) - 58);
+                            myGame.Players[0].Three.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Three.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Three.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Yellow")
+                {
+                    if (myGame.Players[0].Three.InPlay == true)
+                    {
+                        if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Three.Position = 27;
                         }
-                    }
-                    else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 52)
-                    {
-                        myGame.Players[0].Three.Position += myGame.Dice.Value;
-                    }
-                    else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
-                    {
-                        myGame.Players[0].Three.Position += myGame.Dice.Value;
-                    }
+                        else if (myGame.Players[0].Three.Position >= 27 && myGame.Players[0].Three.Position <= 52)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 52)
+                            {
+                                int x = myGame.Players[0].Three.Position - 52;
+                                myGame.Players[0].Three.Position = 0;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 25)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 25)
+                            {
+                                int x = myGame.Players[0].Three.Position - 25;
+                                myGame.Players[0].Three.Position = 52;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                        }
 
-                    if (myGame.Players[0].Three.Position > 58)
-                    {
-                        int x = ((myGame.Players[0].Three.Position) - 58);
-                        myGame.Players[0].Three.Position = (58 - x);
+                        if (myGame.Players[0].Three.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Three.Position) - 58);
+                            myGame.Players[0].Three.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Three.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Three.InPlay = false;
+                        }
                     }
-                    else if (myGame.Players[0].Three.Position == 58)
+                }
+
+                if (myGame.Players[0].Color == "Blue")
+                {
+                    if (myGame.Players[0].Three.InPlay == true)
                     {
-                        myGame.Players[0].Three.InPlay = false;
+                        if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
+                        {
+                            myGame.Players[0].Three.Position = 14;
+                        }
+                        else if (myGame.Players[0].Three.Position >= 14 && myGame.Players[0].Three.Position <= 52)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 52)
+                            {
+                                int x = myGame.Players[0].Three.Position - 52;
+                                myGame.Players[0].Three.Position = 0;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 12)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Three.Position > 12)
+                            {
+                                int x = myGame.Players[0].Three.Position - 12;
+                                myGame.Players[0].Three.Position = 52;
+                                myGame.Players[0].Three.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
+                        {
+                            myGame.Players[0].Three.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Three.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Three.Position) - 58);
+                            myGame.Players[0].Three.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Three.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Three.InPlay = false;
+                        }
                     }
                 }
             }
@@ -231,44 +630,177 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-                if (myGame.Players[0].Four.InPlay == true)
+                if (myGame.Players[0].Color == "Red")
                 {
-                    if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
+                    if (myGame.Players[0].Four.InPlay == true)
                     {
-                        if (myGame.Players[0].Color == "Red")
+                        if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Four.Position = 40;
                         }
-                        else if (myGame.Players[0].Color == "Green")
+                        else if (myGame.Players[0].Four.Position >= 40 && myGame.Players[0].Four.Position <= 52)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 52)
+                            {
+                                int x = myGame.Players[0].Four.Position - 52;
+                                myGame.Players[0].Four.Position = 0;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 38)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 38)
+                            {
+                                int x = myGame.Players[0].Four.Position - 38;
+                                myGame.Players[0].Four.Position = 52;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Four.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Four.Position) - 58);
+                            myGame.Players[0].Four.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Four.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Four.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Green")
+                {
+                    if (myGame.Players[0].Four.InPlay == true)
+                    {
+                        if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Four.Position = 1;
                         }
-                        else if (myGame.Players[0].Color == "Blue")
+                        else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 51)
                         {
-                            myGame.Players[0].Four.Position = 14;
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position >= 52)
+                            {
+                                int x = myGame.Players[0].Four.Position - 51;
+                                myGame.Players[0].Four.Position = 52;
+                                myGame.Players[0].Four.Position += x;
+                            }
                         }
-                        else if (myGame.Players[0].Color == "Yellow")
+                        else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Four.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Four.Position) - 58);
+                            myGame.Players[0].Four.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Four.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Four.InPlay = false;
+                        }
+                    }
+                }
+
+                if (myGame.Players[0].Color == "Yellow")
+                {
+                    if (myGame.Players[0].Four.InPlay == true)
+                    {
+                        if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
                         {
                             myGame.Players[0].Four.Position = 27;
                         }
-                    }
-                    else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 52)
-                    {
-                        myGame.Players[0].Four.Position += myGame.Dice.Value;
-                    }
-                    else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
-                    {
-                        myGame.Players[0].Four.Position += myGame.Dice.Value;
-                    }
+                        else if (myGame.Players[0].Four.Position >= 27 && myGame.Players[0].Four.Position <= 52)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 52)
+                            {
+                                int x = myGame.Players[0].Four.Position - 52;
+                                myGame.Players[0].Four.Position = 0;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 25)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 25)
+                            {
+                                int x = myGame.Players[0].Four.Position - 25;
+                                myGame.Players[0].Four.Position = 52;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                        }
 
-                    if (myGame.Players[0].Four.Position > 58)
-                    {
-                        int x = ((myGame.Players[0].Four.Position) - 58);
-                        myGame.Players[0].Four.Position = (58 - x);
+                        if (myGame.Players[0].Four.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Four.Position) - 58);
+                            myGame.Players[0].Four.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Four.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Four.InPlay = false;
+                        }
                     }
-                    else if (myGame.Players[0].Four.Position == 58)
+                }
+
+                if (myGame.Players[0].Color == "Blue")
+                {
+                    if (myGame.Players[0].Four.InPlay == true)
                     {
-                        myGame.Players[0].Four.InPlay = false;
+                        if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
+                        {
+                            myGame.Players[0].Four.Position = 14;
+                        }
+                        else if (myGame.Players[0].Four.Position >= 14 && myGame.Players[0].Four.Position <= 52)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 52)
+                            {
+                                int x = myGame.Players[0].Four.Position - 52;
+                                myGame.Players[0].Four.Position = 0;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 12)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                            if (myGame.Players[0].Four.Position > 12)
+                            {
+                                int x = myGame.Players[0].Four.Position - 12;
+                                myGame.Players[0].Four.Position = 52;
+                                myGame.Players[0].Four.Position += x;
+                            }
+                        }
+                        else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
+                        {
+                            myGame.Players[0].Four.Position += myGame.Dice.Value;
+                        }
+
+                        if (myGame.Players[0].Four.Position > 58)
+                        {
+                            int x = ((myGame.Players[0].Four.Position) - 58);
+                            myGame.Players[0].Four.Position = (58 - x);
+                        }
+                        else if (myGame.Players[0].Four.Position == 58)
+                        {
+                            //win condition
+                            myGame.Players[0].Four.InPlay = false;
+                        }
                     }
                 }
             }
