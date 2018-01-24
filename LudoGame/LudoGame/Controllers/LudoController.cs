@@ -36,7 +36,7 @@ namespace LudoGame.Controllers
             {
                 
                 //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
-                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice });
+                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["UserCookie"].Value });
                 myGame.Players[0].Turn = true;
                 counter++;
             }
