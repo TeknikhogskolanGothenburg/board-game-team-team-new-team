@@ -1,11 +1,11 @@
 ﻿
 @model LudoGame.Models.Game
 
-@helper PlayerBrickHelper(List<GameEngine.GamePlayer> players, string color)
+@helper PlayerBrickHelper(List<GameEngine.GamePlayer> players, string color, int num)
     {
         foreach (GameEngine.GamePlayer player in players)
         {
-            if (player.One.Position == 0 && player.Color == color)
+            if (player.One.Position == 0 && player.Color == color && num == 1)
             {
                 if (color == "Red")
                 {
@@ -24,7 +24,7 @@
                     <div class="brick player4" id="PieceOne">1</div>
                 }
             }
-            else if (player.Two.Position == 0 && player.Color == color)
+            else if (player.Two.Position == 0 && player.Color == color && num == 2)
             {
                 if (color == "Red")
                 {
@@ -43,7 +43,7 @@
                     <div class="brick player4" id="PieceTwo">2</div>
                 }
             }
-            else if (player.Three.Position == 0 && player.Color == color)
+            else if (player.Three.Position == 0 && player.Color == color && num == 3)
             {
                 if (color == "Red")
                 {
@@ -62,7 +62,7 @@
                     <div class="brick player4" id="PieceThree">3</div>
                 }
             }
-            else if (player.Four.Position == 0 && player.Color == color)
+            else if (player.Four.Position == 0 && player.Color == color && num == 4)
             {
                 if (color == "Red")
                 {
@@ -213,73 +213,73 @@
     <div class="goal"></div>
     <div class="start player1">
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Red")
+            @PlayerBrickHelper(Model.Players, "Red", 1)
             @*<div class="brick player1" id="GamePieceOne"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Red")
+            @PlayerBrickHelper(Model.Players, "Red", 2)
             @*<div class="brick player1" id="GamePieceTwo"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Red")
+            @PlayerBrickHelper(Model.Players, "Red", 3)
             @*<div class="brick player1" id="GamePieceThree"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Red")
+            @PlayerBrickHelper(Model.Players, "Red", 4)
             @*<div class="brick player1" id="GamePieceFour"></div>*@
         </div>
     </div>
     <div class="start player2">
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Green")
+            @PlayerBrickHelper(Model.Players, "Green", 1)
             @*<div class="brick player2" id="GamePieceOne"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Green")
+            @PlayerBrickHelper(Model.Players, "Green", 2)
             @*<div class="brick player2" id="GamePieceTwo"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Green")
+            @PlayerBrickHelper(Model.Players, "Green", 3)
             @*<div class="brick player2" id="GamePieceThree"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Green")
+            @PlayerBrickHelper(Model.Players, "Green", 4)
             @*<div class="brick player2" id="GamePieceFour"></div>*@
         </div>
     </div>
     <div class="start player3">
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Yellow")
+            @PlayerBrickHelper(Model.Players, "Yellow", 1)
             @*<div class="brick player3" id="GamePieceOne"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Yellow")
+            @PlayerBrickHelper(Model.Players, "Yellow", 2)
             @*<div class="brick player3" id="GamePieceTwo"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Yellow")
+            @PlayerBrickHelper(Model.Players, "Yellow", 3)
             @*<div class="brick player3" id="GamePieceThree"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Yellow")
+            @PlayerBrickHelper(Model.Players, "Yellow", 4)
             @*<div class="brick player3" id="GamePieceFour"></div>*@
         </div>
     </div>
     <div class="start player4">
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Blue")
+            @PlayerBrickHelper(Model.Players, "Blue", 1)
             @*<div class="brick player4" id="GamePieceOne"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Blue")
+            @PlayerBrickHelper(Model.Players, "Blue", 2)
             @*<div class="brick player4" id="GamePieceTwo"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Blue")
+            @PlayerBrickHelper(Model.Players, "Blue", 3)
             @*<div class="brick player4" id="GamePieceThree"></div>*@
         </div>
         <div class="field">
-            @PlayerBrickHelper(Model.Players, "Blue")
+            @PlayerBrickHelper(Model.Players, "Blue", 4)
             @*<div class="brick player4" id="GamePieceFour"></div>*@
         </div>
     </div>
