@@ -79,11 +79,33 @@ namespace LudoGame.Controllers
         }
         public ActionResult MovePiece1()
         {
-            if(myGame.Players[0].Turn == true)
+            if (myGame.Players[0].Turn == true)
             {
                 if(myGame.Players[0].One.InPlay == true)
                 {
-                    myGame.Players[0].One.Position += myGame.Dice.Value;
+                    if (myGame.Players[0].One.Position == 0 && myGame.Dice.Value == 6)
+                    {
+                        if (myGame.Players[0].Color == "Red")
+                        {
+                            myGame.Players[0].One.Position = 40;
+                        }
+                        else if (myGame.Players[0].Color == "Green")
+                        {
+                            myGame.Players[0].One.Position = 1;
+                        }
+                        else if (myGame.Players[0].Color == "Blue")
+                        {
+                            myGame.Players[0].One.Position = 14;
+                        }
+                        else if (myGame.Players[0].Color == "Yellow")
+                        {
+                            myGame.Players[0].One.Position = 27;
+                        }
+                    }
+                    else if (myGame.Players[0].One.Position >= 1)
+                    {
+                        myGame.Players[0].One.Position += myGame.Dice.Value;
+                    }
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -92,9 +114,32 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
+
                 if (myGame.Players[0].Two.InPlay == true)
                 {
-                    myGame.Players[0].Two.Position += myGame.Dice.Value;
+                    if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
+                    {
+                        if (myGame.Players[0].Color == "Red")
+                        {
+                            myGame.Players[0].Two.Position = 40;
+                        }
+                        else if (myGame.Players[0].Color == "Green")
+                        {
+                            myGame.Players[0].Two.Position = 1;
+                        }
+                        else if (myGame.Players[0].Color == "Blue")
+                        {
+                            myGame.Players[0].Two.Position = 14;
+                        }
+                        else if (myGame.Players[0].Color == "Yellow")
+                        {
+                            myGame.Players[0].Two.Position = 27;
+                        }
+                    }
+                    else if(myGame.Players[0].Two.Position >= 1)
+                    {
+                        myGame.Players[0].Two.Position += myGame.Dice.Value;
+                    }
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -103,9 +148,32 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
+
                 if (myGame.Players[0].Three.InPlay == true)
                 {
-                    myGame.Players[0].Three.Position += myGame.Dice.Value;
+                    if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
+                    {
+                        if (myGame.Players[0].Color == "Red")
+                        {
+                            myGame.Players[0].Three.Position = 40;
+                        }
+                        else if (myGame.Players[0].Color == "Green")
+                        {
+                            myGame.Players[0].Three.Position = 1;
+                        }
+                        else if (myGame.Players[0].Color == "Blue")
+                        {
+                            myGame.Players[0].Three.Position = 14;
+                        }
+                        else if (myGame.Players[0].Color == "Yellow")
+                        {
+                            myGame.Players[0].Three.Position = 27;
+                        }
+                    }
+                    else if (myGame.Players[0].Two.Position >= 1)
+                    {
+                        myGame.Players[0].Three.Position += myGame.Dice.Value;
+                    }
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -114,9 +182,32 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
+
                 if (myGame.Players[0].Four.InPlay == true)
                 {
-                    myGame.Players[0].Four.Position += myGame.Dice.Value;
+                    if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
+                    {
+                        if (myGame.Players[0].Color == "Red")
+                        {
+                            myGame.Players[0].Four.Position = 40;
+                        }
+                        else if (myGame.Players[0].Color == "Green")
+                        {
+                            myGame.Players[0].Four.Position = 1;
+                        }
+                        else if (myGame.Players[0].Color == "Blue")
+                        {
+                            myGame.Players[0].Four.Position = 14;
+                        }
+                        else if (myGame.Players[0].Color == "Yellow")
+                        {
+                            myGame.Players[0].Four.Position = 27;
+                        }
+                    }
+                    else if (myGame.Players[0].Two.Position >= 1)
+                    {
+                        myGame.Players[0].Four.Position += myGame.Dice.Value;
+                    }
                 }
             }
             return RedirectToAction("Index", "Ludo");
