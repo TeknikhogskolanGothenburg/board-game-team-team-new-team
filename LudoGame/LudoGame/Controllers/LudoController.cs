@@ -23,11 +23,20 @@ namespace LudoGame.Controllers
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
 
+            if(Request.Cookies["UserCookie"] == null)
+            {
+                HttpCookie myCookie = new HttpCookie("UserCookie");
+                Guid guid = Guid.NewGuid();
+                myCookie.Value = guid.ToString();
+                myCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(myCookie);
+            }
+
             if (counter < 4 && userNickName != null && userColorChoice != null)
             {
                 
                 //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
-                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice });
+                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["UserCookie"].Value });
                 myGame.Players[0].Turn = true;
                 counter++;
             }
