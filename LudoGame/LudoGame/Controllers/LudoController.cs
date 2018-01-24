@@ -10,7 +10,7 @@ namespace LudoGame.Controllers
 {
     public class LudoController : Controller
     {
-        public static Game myGame = new Game { };
+        public static Game myGame = new Game {};
         public static int counter = 0;
         public static bool red = false;
         public static bool green = false;
@@ -70,14 +70,14 @@ namespace LudoGame.Controllers
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y", Position = 52 + i });
                 Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B", Position = 52 + i });
             }
-            
-            GameDice myDice = new GameDice();
-            myDice.Value = myDice.RollTheDice();
-            myGame.Dice = myDice;
-            
             return View(myGame);
         }
-        
+        public ActionResult RollDice()
+        {
+            myGame.Dice.Value = myGame.Dice.RollTheDice();
+            return RedirectToAction("Index", "Ludo");
+
+        }
         public ActionResult MovePiece()
         {
             if(myGame.Players[0].Turn == true)
