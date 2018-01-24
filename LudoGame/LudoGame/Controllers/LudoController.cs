@@ -102,9 +102,23 @@ namespace LudoGame.Controllers
                             myGame.Players[0].One.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position  < 53)
+                    else if (myGame.Players[0].One.Position >= 1 && myGame.Players[0].One.Position  <= 52)
                     {
                         myGame.Players[0].One.Position += myGame.Dice.Value;
+                    }
+                    else if(myGame.Players[0].One.Position >= 53 && myGame.Players[0].One.Position <= 58)
+                    {
+                        myGame.Players[0].One.Position += myGame.Dice.Value;
+                    }
+
+                    if (myGame.Players[0].One.Position > 58)
+                    {
+                        int x = ((myGame.Players[0].One.Position) - 58);
+                        myGame.Players[0].One.Position = (58 - x);
+                    }
+                    else if (myGame.Players[0].One.Position == 58)
+                    {
+                        myGame.Players[0].One.InPlay = false;
                     }
                 }
             }
@@ -114,7 +128,6 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-
                 if (myGame.Players[0].Two.InPlay == true)
                 {
                     if (myGame.Players[0].Two.Position == 0 && myGame.Dice.Value == 6)
@@ -136,9 +149,23 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Two.Position = 27;
                         }
                     }
-                    else if(myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position < 53)
+                    else if (myGame.Players[0].Two.Position >= 1 && myGame.Players[0].Two.Position <= 52)
                     {
                         myGame.Players[0].Two.Position += myGame.Dice.Value;
+                    }
+                    else if (myGame.Players[0].Two.Position >= 53 && myGame.Players[0].Two.Position <= 58)
+                    {
+                        myGame.Players[0].Two.Position += myGame.Dice.Value;
+                    }
+
+                    if (myGame.Players[0].Two.Position > 58)
+                    {
+                        int x = ((myGame.Players[0].Two.Position) - 58);
+                        myGame.Players[0].Two.Position = (58 - x);
+                    }
+                    else if (myGame.Players[0].Two.Position == 58)
+                    {
+                        myGame.Players[0].Two.InPlay = false;
                     }
                 }
             }
@@ -148,7 +175,6 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-
                 if (myGame.Players[0].Three.InPlay == true)
                 {
                     if (myGame.Players[0].Three.Position == 0 && myGame.Dice.Value == 6)
@@ -170,9 +196,23 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Three.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position > 53)
+                    else if (myGame.Players[0].Three.Position >= 1 && myGame.Players[0].Three.Position <= 52)
                     {
                         myGame.Players[0].Three.Position += myGame.Dice.Value;
+                    }
+                    else if (myGame.Players[0].Three.Position >= 53 && myGame.Players[0].Three.Position <= 58)
+                    {
+                        myGame.Players[0].Three.Position += myGame.Dice.Value;
+                    }
+
+                    if (myGame.Players[0].Three.Position > 58)
+                    {
+                        int x = ((myGame.Players[0].Three.Position) - 58);
+                        myGame.Players[0].Three.Position = (58 - x);
+                    }
+                    else if (myGame.Players[0].Three.Position == 58)
+                    {
+                        myGame.Players[0].Three.InPlay = false;
                     }
                 }
             }
@@ -182,7 +222,6 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players[0].Turn == true)
             {
-
                 if (myGame.Players[0].Four.InPlay == true)
                 {
                     if (myGame.Players[0].Four.Position == 0 && myGame.Dice.Value == 6)
@@ -204,9 +243,23 @@ namespace LudoGame.Controllers
                             myGame.Players[0].Four.Position = 27;
                         }
                     }
-                    else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position > 53)
+                    else if (myGame.Players[0].Four.Position >= 1 && myGame.Players[0].Four.Position <= 52)
                     {
                         myGame.Players[0].Four.Position += myGame.Dice.Value;
+                    }
+                    else if (myGame.Players[0].Four.Position >= 53 && myGame.Players[0].Four.Position <= 58)
+                    {
+                        myGame.Players[0].Four.Position += myGame.Dice.Value;
+                    }
+
+                    if (myGame.Players[0].Four.Position > 58)
+                    {
+                        int x = ((myGame.Players[0].Four.Position) - 58);
+                        myGame.Players[0].Four.Position = (58 - x);
+                    }
+                    else if (myGame.Players[0].Four.Position == 58)
+                    {
+                        myGame.Players[0].Four.InPlay = false;
                     }
                 }
             }
