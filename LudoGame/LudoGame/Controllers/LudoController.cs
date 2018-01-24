@@ -28,6 +28,7 @@ namespace LudoGame.Controllers
                 
                 //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
                 myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice });
+                myGame.Players[0].Turn = true;
                 counter++;
             }
             if (myGame.Players.Count > 0)
