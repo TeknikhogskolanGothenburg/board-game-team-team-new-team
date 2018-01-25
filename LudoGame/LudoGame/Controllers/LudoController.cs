@@ -16,6 +16,7 @@ namespace LudoGame.Controllers
         public static bool green = false;
         public static bool yellow = false;
         public static bool blue = false;
+        public static int turnCounter = 1;
 
         // GET: /Ludo/
         public ActionResult StartPage()
@@ -95,6 +96,24 @@ namespace LudoGame.Controllers
             foreach(GamePlayer player in myGame.Players)
             {
                 player.One.MovePiece(player, myGame.Dice, player.One);
+                if (myGame.Dice.Value == 6 && player.Turn == true)
+                {
+                    player.CanThrow = true;
+                    player.CanMove = false;
+                }
+                else
+                {
+                    if (player.Turn == true)
+                    {
+                        player.Turn = false;
+                        player.CanMove = false;
+                    }
+                    
+                    foreach(GamePlayer player2 in myGame.Players)
+                    {
+                        player.NextTurn(turnCounter, player);
+                    }
+                }
             }
 
             return RedirectToAction("Index", "Ludo");

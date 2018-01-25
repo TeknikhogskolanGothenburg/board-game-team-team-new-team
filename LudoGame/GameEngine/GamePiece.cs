@@ -189,16 +189,7 @@ namespace GameEngine
                         }
                     }
                 }
-                if (dice.Value == 6)
-                {
-                    player.CanThrow = true;
-                    player.CanMove = false;
-                }
-                else
-                {
-                    player.Turn = false;
-                    player.CanMove = false;
-                }
+                
 
             }
         }
