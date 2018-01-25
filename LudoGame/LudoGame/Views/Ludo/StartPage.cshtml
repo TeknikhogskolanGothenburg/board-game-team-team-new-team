@@ -4,9 +4,9 @@
 }
 
 <div style="background-image: url(../../Content/colored-ludo-dice-wallpaper-1920x1080.jpg); height: 1080px; width: 1920px; border: 1px solid black;">
-    <h1 style="font-size: 2em;">Welcome to KJJ:s Ludo Game!!</h1>
+    <h1 style="font-size: 180%;">Welcome to KJJ:s Ludo Game!!</h1>
     <br />
-    <p style="font-size: 1em;"> Winner winner chicken dinner! </p>
+    <p style="font-size: 140%;"><b>Winner winner chicken dinner!</b></p>
     <br />
 
     @using (Html.BeginForm())
@@ -23,6 +23,7 @@
             {
                 <br />
                 <p>Choose a color!</p>
+                <br />
                 <select class="form-control" id="colorChoice" name="colorChoice">
                     @if (LudoGame.Controllers.LudoController.red == false)
                     {
@@ -42,9 +43,11 @@
                     }
                 </select>
                 <br />
+                <br />
                 <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
                 <br />
-                <input type="submit" name="colorSubmit" value="Enter" />
+                <br />
+                <input type="submit" id="colorButton" name="colorSubmit" value="Enter" />
             }
 
         </div>
@@ -55,5 +58,4 @@
         <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
         <br />
      }
-    <h3>HEJ!!!!!!!!!!!!!!!!!!!!!!!</h3>
 </div>
