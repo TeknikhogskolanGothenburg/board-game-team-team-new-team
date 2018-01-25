@@ -63,6 +63,10 @@ namespace LudoGame.Controllers
                     }
                 }
             }
+            if (myGame.Players.Count > 0 && userNickName != null && userColorChoice != null)
+            {
+                return RedirectToAction("Index");
+            }
             return View(myGame);
         }
 
@@ -73,7 +77,13 @@ namespace LudoGame.Controllers
 
         public ActionResult RollDice()
         {
-            myGame.Dice.Value = myGame.Dice.RollTheDice();
+            foreach (GamePlayer player in myGame.Players)
+            {
+                if (player.Turn == true)
+                {
+                    myGame.Dice.Value = myGame.Dice.RollTheDice();
+                }
+            }
             return RedirectToAction("Index", "Ludo");
         }
 
