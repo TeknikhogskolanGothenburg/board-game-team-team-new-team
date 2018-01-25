@@ -67,18 +67,6 @@ namespace LudoGame.Controllers
 
         public ActionResult Index()
         {
-            //GameBoard Board = new GameBoard{};
-            //for(int i = 1; i <= 52; i++)
-            //{
-            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i), Position = i });
-            //}
-            //for(int i = 1; i <= 5; i++)
-            //{
-            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "G", Position = 52 + i });
-            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "R", Position = 52 + i });
-            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "Y", Position = 52 + i });
-            //    Board.GameSquares.Add(new GameSquare { NumberedName = Convert.ToString(i) + "B", Position = 52 + i });
-            //}
             return View(myGame);
         }
         public ActionResult RollDice()
