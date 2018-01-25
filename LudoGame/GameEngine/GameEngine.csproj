@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameSquare.cs" />
-    <Compile Include="GameBoard.cs" />
     <Compile Include="GamePiece.cs" />
     <Compile Include="GamePlayer.cs" />
     <Compile Include="GameDice.cs" />
