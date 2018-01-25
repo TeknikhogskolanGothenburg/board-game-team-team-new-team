@@ -63,6 +63,10 @@ namespace LudoGame.Controllers
                     }
                 }
             }
+            if (myGame.Players.Count > 0 && userNickName != null && userColorChoice != null)
+            {
+                return RedirectToAction("Index");
+            }
             return View(myGame);
         }
 
