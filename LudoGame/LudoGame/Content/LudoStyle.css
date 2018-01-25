@@ -13,7 +13,7 @@ html{
     border: 2px solid black;
     margin:0px;
     padding:0px;
-    position: absolute;
+    position: relative;
     top: 150px;
     left: 50px;
 }
