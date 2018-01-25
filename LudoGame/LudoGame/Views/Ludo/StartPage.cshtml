@@ -12,16 +12,13 @@
     @using (Html.BeginForm())
     {
         <div>
-            @*@Html.Label("Select a new game:")
-            @Html.CheckBox("SelectLabel", false)
-            <br />
-            @Html.Label("Join existing game:")
-            @Html.CheckBox("JoinLabel", false)
-            <br />
-            <br />*@
             @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
             {
-                <input type="text" value="Enter GameName Here!" class="input-text autoclear" runat="server" id="myGametxtBox" name="myGametxtBox"/>
+                <br />
+                <p style="font-size: 1em;">Enter GameName Here!</p> 
+                <input type="text" value="" class="input-text autoclear" runat="server" id="myGametxtBox" name="myGametxtBox" />
+                <br />
+                <br />
                 <p>Choose a color!</p>
                 <select class="form-control" id="colorChoice" name="colorChoice">
                     @if (LudoGame.Controllers.LudoController.red == false)
@@ -42,7 +39,9 @@
                     }
                 </select>
                 <br />
-                <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
+                <br />
+                <p style="font-size: 1em;">Enter nickname here!</p>
+                <input type="text" value="" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
                 <br />
                 <br />
                 <input type="submit" id="colorButton" name="colorSubmit" value="Enter" />
@@ -51,9 +50,9 @@
         </div>
     }
     @if (LudoGame.Controllers.LudoController.myGame.Players.Count >= 2)
-     {
+    {
         <br />
         <h2> @Html.ActionLink("Go to LudoGame", "Index")</h2>
         <br />
-     }
+    }
 </div>
