@@ -39,6 +39,7 @@ namespace LudoGame.Controllers
                 //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
                 myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["UserCookie"].Value });
                 myGame.Players[0].Turn = true;
+                myGame.Players[0].CanThrow = true;
                 counter++;
             }
             if (myGame.Players.Count > 0)
@@ -79,9 +80,10 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                if (player.Turn == true)
+                if (player.Turn == true && player.CanThrow == true)
                 {
                     myGame.Dice.Value = myGame.Dice.RollTheDice();
+                    player.CanThrow = false;
                 }
             }
             return RedirectToAction("Index", "Ludo");
