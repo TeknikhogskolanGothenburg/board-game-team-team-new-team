@@ -128,6 +128,7 @@
     <Content Include="Views\Shared\BoardView.cshtml" />
     <Content Include="Views\Ludo\StartPage.cshtml" />
     <Content Include="Views\Ludo\MovePiece.cshtml" />
+    <Content Include="Views\Ludo\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
