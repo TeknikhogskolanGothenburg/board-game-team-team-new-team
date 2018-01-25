@@ -73,7 +73,13 @@ namespace LudoGame.Controllers
 
         public ActionResult RollDice()
         {
-            myGame.Dice.Value = myGame.Dice.RollTheDice();
+            foreach (GamePlayer player in myGame.Players)
+            {
+                if (player.Turn == true)
+                {
+                    myGame.Dice.Value = myGame.Dice.RollTheDice();
+                }
+            }
             return RedirectToAction("Index", "Ludo");
         }
 
