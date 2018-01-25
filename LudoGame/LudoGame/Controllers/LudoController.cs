@@ -89,6 +89,7 @@ namespace LudoGame.Controllers
                 {
                     myGame.Dice.Value = myGame.Dice.RollTheDice();
                     player.CanThrow = false;
+                    player.CanMove = true;
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -100,6 +101,7 @@ namespace LudoGame.Controllers
             {
                 player.One.MovePiece(player, myGame.Dice, player.One);
             }
+
             return RedirectToAction("Index", "Ludo");
         }
 

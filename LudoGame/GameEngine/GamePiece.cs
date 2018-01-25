@@ -14,7 +14,7 @@ namespace GameEngine
 
         public void MovePiece( GamePlayer player, GameDice dice, GamePiece piece)
         {
-            if (player.Turn == true)
+            if (player.Turn == true && player.CanMove == true)
             {
                 if (player.Color == "Red")
                 {
@@ -189,6 +189,17 @@ namespace GameEngine
                         }
                     }
                 }
+                if (dice.Value == 6)
+                {
+                    player.CanThrow = true;
+                    player.CanMove = false;
+                }
+                else
+                {
+                    player.Turn = false;
+                    player.CanMove = false;
+                }
+
             }
         }
     }
