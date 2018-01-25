@@ -15,8 +15,8 @@
             @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
             {
                 <br />
-                <p style="font-size: 1em;">Enter GameName Here!</p> 
-                <input type="text" value="" class="input-text autoclear" runat="server" id="myGametxtBox" name="myGametxtBox" />
+                <p style="font-size: 1em;">Number of players: </p> 
+                <input type="number" class="input-text autoclear" max="4" min="2" value="2" runat="server" id="numberOfPlayers" name="numbersOfPlayers" />
                 <br />
                 <br />
                 <p>Choose a color!</p>
