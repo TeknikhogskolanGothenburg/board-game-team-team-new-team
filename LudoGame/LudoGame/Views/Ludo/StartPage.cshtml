@@ -4,6 +4,8 @@
 }
 
 <div style="background-image: url(../../Content/colored-ludo-dice-wallpaper-1920x1080.jpg); height: 1080px; width: 1920px; border: 1px solid black;">
+    <div><button type="button" id="CreditsBtn" onclick="location.href='http://localhost:52393/Ludo/About'">Credits</button></div>
+    <br />
     <h1 style="font-size: 180%;">Welcome to KJJ:s Ludo Game!!</h1>
     <br />
     <p style="font-size: 140%;"><b>Winner winner chicken dinner!</b></p>
@@ -15,7 +17,7 @@
             @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
             {
                 <br />
-                <p style="font-size: 1em;">Number of players: </p> 
+                <p style="font-size: 1em;">Number of players: </p>
                 <input type="number" class="input-text autoclear" max="4" min="2" value="2" runat="server" id="numberOfPlayers" name="numbersOfPlayers" />
                 <br />
                 <br />
