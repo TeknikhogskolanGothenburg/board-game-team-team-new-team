@@ -77,7 +77,13 @@ namespace LudoGame.Controllers
 
         public ActionResult RollDice()
         {
-            myGame.Dice.Value = myGame.Dice.RollTheDice();
+            foreach (GamePlayer player in myGame.Players)
+            {
+                if (player.Turn == true)
+                {
+                    myGame.Dice.Value = myGame.Dice.RollTheDice();
+                }
+            }
             return RedirectToAction("Index", "Ludo");
         }
 
@@ -103,7 +109,7 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                player.Two.MovePiece(player, myGame.Dice, player.Two);
+                player.Three.MovePiece(player, myGame.Dice, player.Three);
             }
             return RedirectToAction("Index", "Ludo");
         }
@@ -112,7 +118,7 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                player.Two.MovePiece(player, myGame.Dice, player.Two);
+                player.Four.MovePiece(player, myGame.Dice, player.Four);
             }
             return RedirectToAction("Index", "Ludo");
         }
