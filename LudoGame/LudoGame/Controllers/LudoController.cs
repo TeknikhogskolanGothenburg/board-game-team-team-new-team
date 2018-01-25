@@ -20,6 +20,7 @@ namespace LudoGame.Controllers
         // GET: /Ludo/
         public ActionResult StartPage()
         {
+            string userGameName = Request.Form["myGametxtBox"];
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
 
