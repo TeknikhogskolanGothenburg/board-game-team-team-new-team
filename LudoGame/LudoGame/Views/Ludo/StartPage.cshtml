@@ -21,9 +21,8 @@
             <br />*@
             @if (@LudoGame.Controllers.LudoController.myGame.Players.Count < 4)
             {
-                <br />
+                <input type="text" value="Enter GameName Here!" class="input-text autoclear" runat="server" id="myGametxtBox" name="myGametxtBox"/>
                 <p>Choose a color!</p>
-                <br />
                 <select class="form-control" id="colorChoice" name="colorChoice">
                     @if (LudoGame.Controllers.LudoController.red == false)
                     {
@@ -42,7 +41,6 @@
                         <option>Green</option>
                     }
                 </select>
-                <br />
                 <br />
                 <input type="text" value="Enter NickName Here!" class="input-text autoclear" runat="server" id="myTextBox" name="myTextBox" />
                 <br />
