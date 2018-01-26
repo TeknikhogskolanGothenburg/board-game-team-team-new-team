@@ -20,15 +20,33 @@ namespace GameEngine
         public GamePiece Four = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public void NextTurn(int x, GamePlayer player, List<GamePlayer> players)
         {
-            if (players.Count == 4)
+            if(players.Count == 4)
             {
-                if(x == 4)
+                foreach (GamePlayer person in players)
                 {
-                    x = 0;
+                    if (x == 1 && person.Color == "Red")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 2 && person.Color == "Green")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 3 && person.Color == "Blue")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 4 && person.Color == "Yellow")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
                 }
-                x++;
             }
-            else
+            else if(players.Count < 4)
             {
                 bool red = false;
                 bool green = false;
