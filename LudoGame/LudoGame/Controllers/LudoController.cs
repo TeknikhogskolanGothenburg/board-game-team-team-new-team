@@ -237,7 +237,7 @@ namespace LudoGame.Controllers
                         player.CanMove = false;
                         break;
                     }
-                    else
+                    else if (player.Two.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
                         if (player.Turn == true)
                         {
@@ -302,7 +302,7 @@ namespace LudoGame.Controllers
                         player.CanMove = false;
                         break;
                     }
-                    else
+                    else if (player.Three.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
                         if (player.Turn == true)
                         {
@@ -367,7 +367,7 @@ namespace LudoGame.Controllers
                         player.CanMove = false;
                         break;
                     }
-                    else
+                    else if (player.Four.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
                         if (player.Turn == true)
                         {
@@ -418,6 +418,7 @@ namespace LudoGame.Controllers
             }
             return RedirectToAction("Index", "Ludo");
         }
+
         public ActionResult EndTurn()
         {
             foreach (GamePlayer player in myGame.Players)
