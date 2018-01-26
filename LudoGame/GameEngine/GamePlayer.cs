@@ -20,86 +20,139 @@ namespace GameEngine
         public GamePiece Four = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public void NextTurn(int x, GamePlayer player, List<GamePlayer> players)
         {
-            if (player.Color == "Red")
+            if (players.Count == 4)
             {
-                foreach (GamePlayer nextPlayer in players)
+                if(x == 4)
                 {
-                    if(nextPlayer.Color == "Green")
-                    {
-                        nextPlayer.Turn = true;
-                    }
+                    x = 0;
                 }
-                foreach(GamePlayer nextPlayer in players)
-                {
-                    if (nextPlayer.Color == "Green" && player.Turn == true)
-                    {
-                    }
-         
-                }
+                x++;
             }
-            if (player.Color == "Green")
+            else
             {
-                foreach (GamePlayer nextPlayer in players)
+                bool red = false;
+                bool green = false;
+                bool blue = false;
+                bool yellow = false;
+                
+                foreach(GamePlayer person in players)
                 {
-                    if (nextPlayer.Color == "Green")
+                    if (person.Color == "Red")
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        red = true;
                     }
-                    else if (nextPlayer.Color == "Blue")
+                    if (person.Color == "Green")
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        green = true;
                     }
-                    else if (nextPlayer.Color == "Yellow")
+                    if (person.Color == "Blue")
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        blue = true;
+                    }
+                    if (person.Color == "Yellow")
+                    {
+                        yellow = true;
                     }
                 }
-            }
-            if (player.Color == "Blue")
-            {
-                foreach (GamePlayer nextPlayer in players)
+
+                  // 3 players no yellow
+                if (red == true && green == true && blue == true && yellow != true)
                 {
-                    if (nextPlayer.Color == "Green")
-                    {
-                        nextPlayer.Turn = true;
-                        break;
-                    }
-                    else if (nextPlayer.Color == "Blue")
-                    {
-                        nextPlayer.Turn = true;
-                        break;
-                    }
-                    else if (nextPlayer.Color == "Yellow")
-                    {
-                        nextPlayer.Turn = true;
-                        break;
-                    }
-                }
-            }
-            if (player.Color == "Yellow")
-            {
-                foreach (GamePlayer nextPlayer in players)
+
+                } // 3 players no blue
+                else if (red == true && green == true && blue != true && yellow == true)
                 {
-                    if (nextPlayer.Color == "Green")
+                    if(x == 3)
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        x = 4;
                     }
-                    else if (nextPlayer.Color == "Blue")
+                } // 3 players no green
+                else if (red == true && green != true && blue == true && yellow == true)
+                {
+                    if(x == 2)
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        x = 3;
                     }
-                    else if (nextPlayer.Color == "Yellow")
+                    if(x == 3)
                     {
-                        nextPlayer.Turn = true;
-                        break;
+                        x = 4;
+                    }
+                } // 3 players no red
+                else if (red != true && green == true && blue == true && yellow == true)
+                {
+                    if (x == 1)
+                    {
+                        x = 2;
+                    }
+                    else if (x == 2)
+                    {
+                        x = 3;
+                    }
+                    else if (x == 3)
+                    {
+                        x = 4;
+                    }
+
+                } // 2 players no blue or yellow
+                else if (red == true && green == true && blue != true && yellow != true)
+                {
+                    
+                } // 2 players no green or blue
+                else if (red == true && green != true && blue != true && yellow == true)
+                {
+                    if (x == 2)
+                    {
+                        x = 4;
+                    }
+                } // 2 players no red or green
+                else if (red != true && green != true && blue == true && yellow == true)
+                {
+                    if (x == 1)
+                    {
+                        x = 3;
+                    }
+                    else if (x == 2)
+                    {
+                        x = 4;
+                    }
+                } // 2 players no red or yellow
+                else if (red != true && green == true && blue == true && yellow != true)
+                {
+                    if(x == 1)
+                    {
+                        x = 2;
+                    }
+                    if(x == 2)
+                    {
+                        x = 3;
+                    }
+                } // 2 players no blue or yellow
+
+                foreach (GamePlayer person in players)
+                {
+                    if (x == 1 && person.Color == "Red")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 2 && person.Color == "Green")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 3 && person.Color == "Blue")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
+                    }
+                    else if (x == 4 && person.Color == "Yellow")
+                    {
+                        person.Turn = true;
+                        person.CanThrow = true;
                     }
                 }
             }
         }
+
     }
 }

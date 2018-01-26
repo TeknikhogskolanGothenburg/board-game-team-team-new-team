@@ -17,6 +17,7 @@ namespace LudoGame.Controllers
         public static bool yellow = false;
         public static bool blue = false;
         public static int turnCounter = 1;
+        public static bool gameStart = true;
 
         // GET: /Ludo/
         public ActionResult StartPage()
@@ -84,13 +85,73 @@ namespace LudoGame.Controllers
 
         public ActionResult RollDice()
         {
-            foreach (GamePlayer player in myGame.Players)
+            if (gameStart == true)
             {
-                if (player.Turn == true && player.CanThrow == true)
+                foreach (GamePlayer player in myGame.Players)
                 {
-                    myGame.Dice.Value = myGame.Dice.RollTheDice();
-                    player.CanThrow = false;
-                    player.CanMove = true;
+                    if (player.Turn == true && player.CanThrow == true)
+                    {
+                        myGame.Dice.Value = myGame.Dice.RollTheDice();
+                        if (myGame.Dice.Value == 6)
+                        {
+                            player.CanThrow = false;
+                            player.CanMove = true;
+                            gameStart = false;
+                            break;
+                        }
+                        else
+                        {
+                            player.Turn = false;
+                            player.CanThrow = false;
+
+                            if (myGame.Players.Count == 4)
+                            {
+                                if (turnCounter >= 4)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                            else if (myGame.Players.Count == 3)
+                            {
+                                if (turnCounter >= 3)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                            else if (myGame.Players.Count == 2)
+                            {
+                                if (turnCounter >= 2)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                            player.NextTurn(turnCounter, player, myGame.Players);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (GamePlayer player in myGame.Players)
+                {
+                    if (player.Turn == true && player.CanThrow == true)
+                    {
+                        myGame.Dice.Value = myGame.Dice.RollTheDice();
+                        player.CanThrow = false;
+                        player.CanMove = true;
+                    }
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -98,7 +159,7 @@ namespace LudoGame.Controllers
 
         public ActionResult MovePiece1()
         {
-            foreach(GamePlayer player in myGame.Players)
+            foreach (GamePlayer player in myGame.Players)
             {
                 player.One.MovePiece(player, myGame.Dice, player.One);
                 if (myGame.Dice.Value == 6 && player.Turn == true)
@@ -110,15 +171,48 @@ namespace LudoGame.Controllers
                 {
                     if (player.Turn == true)
                     {
-                        player.Turn = false;
-                        player.CanMove = false;
+                        if (myGame.Players.Count == 4)
+                        {
+                            if (turnCounter >= 4)
+                            {
+                                turnCounter = 1;
+                            }
+                            else
+                            {
+                                turnCounter++;
+                            }
+                        }
+                        else if (myGame.Players.Count == 3)
+                        {
+                            if (turnCounter >= 3)
+                            {
+                                turnCounter = 1;
+                            }
+                            else
+                            {
+                                turnCounter++;
+                            }
+                        }
+                        else if (myGame.Players.Count == 2)
+                        {
+                            if (turnCounter >= 2)
+                            {
+                                turnCounter = 1;
+                            }
+                            else
+                            {
+                                turnCounter++;
+                            }
+                        }
                     }
-                    
-                    foreach(GamePlayer player2 in myGame.Players)
+                    foreach (GamePlayer player2 in myGame.Players)
                     {
-                        player.NextTurn(turnCounter, player);
+                        player.NextTurn(turnCounter, player, myGame.Players);
                     }
+                    break;
+
                 }
+
             }
 
             return RedirectToAction("Index", "Ludo");
@@ -151,6 +245,7 @@ namespace LudoGame.Controllers
             return RedirectToAction("Index", "Ludo");
         }
 
-
     }
+
+    
 }
