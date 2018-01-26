@@ -296,3 +296,46 @@ html{
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
+
+#EndTurn {
+    display: inline-block;
+    background-color: #f4511e;
+    border: solid #1f628d 2px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+}
+
+#EndTurn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#EndTurn span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+#EndTurn:hover span {
+    padding-right: 25px;
+}
+
+#EndTurn:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
