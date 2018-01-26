@@ -151,6 +151,7 @@ namespace LudoGame.Controllers
                         myGame.Dice.Value = myGame.Dice.RollTheDice();
                         player.CanThrow = false;
                         player.CanMove = true;
+                        break;
                     }
                 }
             }
@@ -159,60 +160,65 @@ namespace LudoGame.Controllers
 
         public ActionResult MovePiece1()
         {
-            foreach (GamePlayer player in myGame.Players)
+            foreach(GamePlayer player in myGame.Players)
             {
-                player.One.MovePiece(player, myGame.Dice, player.One);
-                if (myGame.Dice.Value == 6 && player.Turn == true)
+                if (player.CanMove)
                 {
-                    player.CanThrow = true;
-                    player.CanMove = false;
-                }
-                else
-                {
-                    if (player.Turn == true)
+                    player.One.MovePiece(player, myGame.Dice, player.One);
+                    if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
-                        if (myGame.Players.Count == 4)
-                        {
-                            if (turnCounter >= 4)
-                            {
-                                turnCounter = 1;
-                            }
-                            else
-                            {
-                                turnCounter++;
-                            }
-                        }
-                        else if (myGame.Players.Count == 3)
-                        {
-                            if (turnCounter >= 3)
-                            {
-                                turnCounter = 1;
-                            }
-                            else
-                            {
-                                turnCounter++;
-                            }
-                        }
-                        else if (myGame.Players.Count == 2)
-                        {
-                            if (turnCounter >= 2)
-                            {
-                                turnCounter = 1;
-                            }
-                            else
-                            {
-                                turnCounter++;
-                            }
-                        }
+                        player.CanThrow = true;
+                        player.CanMove = false;
+                        break;
                     }
-                    foreach (GamePlayer player2 in myGame.Players)
+                    else
                     {
-                        player.NextTurn(turnCounter, player, myGame.Players);
+                        if (player.Turn == true)
+                        {
+                            player.Turn = false;
+                            player.CanThrow = false;
+                            player.CanMove = false;
+                            if (myGame.Players.Count == 4)
+                            {
+                                if (turnCounter >= 4)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                            else if (myGame.Players.Count == 3)
+                            {
+                                if (turnCounter >= 3)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                            else if (myGame.Players.Count == 2)
+                            {
+                                if (turnCounter >= 2)
+                                {
+                                    turnCounter = 1;
+                                }
+                                else
+                                {
+                                    turnCounter++;
+                                }
+                            }
+                        }
+                        foreach (GamePlayer player2 in myGame.Players)
+                        {
+                            player.NextTurn(turnCounter, player, myGame.Players);
+                        }
+                        break;
                     }
-                    break;
-
                 }
-
             }
 
             return RedirectToAction("Index", "Ludo");
