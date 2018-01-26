@@ -4,6 +4,7 @@ html{
 
 .currentPlayer{
     font-size: 300%;
+    position:relative;
 }
 
 .dice{

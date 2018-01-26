@@ -1,6 +1,15 @@
 ﻿@model LudoGame.Models.Game
+@helper turnName(List<GameEngine.GamePlayer> players)
+    {
+foreach (GameEngine.GamePlayer player in players)
+{
+    if (player.Turn == true)
+    {
+            <div class="currentPlayer">@Html.Label(player.Name)</div>
+    }
+}
+}
 <div class="gameInfo">
-    <div class="currentPlayer"></div>
     <div><button type="button" id="DiceButton" onclick="location.href='@Url.Action("RollDice")'">Roll Dice!</button></div>
     <br />
     <div><button type="button" id="MovePiece" onclick="location.href='@Url.Action("MovePiece1")'">Move Piece 1</button></div>
@@ -61,4 +70,7 @@
             <div class="diceDot" id="rightLower"></div>
         }
     </div>
+    <br />
+    @turnName(Model.Players)
 </div>
+

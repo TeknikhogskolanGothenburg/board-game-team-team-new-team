@@ -138,6 +138,7 @@ namespace LudoGame.Controllers
                                 }
                             }
                             player.NextTurn(turnCounter, player, myGame.Players);
+                            break;
                         }
                     }
                 }
@@ -162,7 +163,7 @@ namespace LudoGame.Controllers
         {
             foreach(GamePlayer player in myGame.Players)
             {
-                if (player.CanMove)
+                if (player.CanMove && player.One.InPlay == true)
                 {
                     player.One.MovePiece(player, myGame.Dice, player.One);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
@@ -228,7 +229,7 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                if (player.CanMove)
+                if (player.CanMove && player.Two.InPlay == true)
                 {
                     player.Two.MovePiece(player, myGame.Dice, player.Two);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
@@ -293,7 +294,7 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                if (player.CanMove)
+                if (player.CanMove && player.Three.InPlay == true)
                 {
                     player.Three.MovePiece(player, myGame.Dice, player.Three);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
@@ -358,7 +359,7 @@ namespace LudoGame.Controllers
         {
             foreach (GamePlayer player in myGame.Players)
             {
-                if (player.CanMove)
+                if (player.CanMove && player.Four.InPlay == true)
                 {
                     player.Four.MovePiece(player, myGame.Dice, player.Four);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
