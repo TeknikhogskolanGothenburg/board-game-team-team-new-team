@@ -97,11 +97,12 @@ namespace LudoGame.Controllers
 
         public ActionResult RollDice()
         {
+            string currentPlayer = Request.Cookies["Cookie"].Value;
             if (gameStart == true)
             {
                 foreach (GamePlayer player in myGame.Players)
                 {
-                    if (player.Turn == true && player.CanThrow == true)
+                    if (player.Turn == true && player.CanThrow == true && currentPlayer == player.Color)
                     {
                         myGame.Dice.Value = myGame.Dice.RollTheDice();
                         if (myGame.Dice.Value == 6)
@@ -159,7 +160,7 @@ namespace LudoGame.Controllers
             {
                 foreach (GamePlayer player in myGame.Players)
                 {
-                    if (player.Turn == true && player.CanThrow == true)
+                    if (player.Turn == true && player.CanThrow == true && currentPlayer == player.Color)
                     {
                         myGame.Dice.Value = myGame.Dice.RollTheDice();
                         player.CanThrow = false;
