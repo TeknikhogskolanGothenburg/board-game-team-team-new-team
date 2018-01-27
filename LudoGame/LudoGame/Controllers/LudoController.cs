@@ -26,20 +26,32 @@ namespace LudoGame.Controllers
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
 
-            if(Request.Cookies["UserCookie"] == null)
-            {
-                HttpCookie myCookie = new HttpCookie("UserCookie");
-                Guid guid = Guid.NewGuid();
-                myCookie.Value = guid.ToString();
-                myCookie.Expires = DateTime.Now.AddDays(10);
-                Response.SetCookie(myCookie);
-            }
-
             if (counter < 4 && userNickName != null && userColorChoice != null)
             {
-                
-                //myGame.Players.Add(new GamePlayer { Name = ""/*Example variable*/, Color = ""/*colorChoice*/ });
-                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["UserCookie"].Value });
+                if (Request.Cookies["Cookie"] == null)
+                {
+                    HttpCookie userCookie = new HttpCookie("Cookie");
+                    if (userColorChoice == "Red")
+                    {
+                        userCookie.Value = "Red";
+                    }
+                    else if (userColorChoice == "Yellow")
+                    {
+                        userCookie.Value = "Yellow";
+                    }
+                    else if (userColorChoice == "Blue")
+                    {
+                        userCookie.Value = "Blue";
+                    }
+                    else if (userColorChoice == "Green")
+                    {
+                        userCookie.Value = "Green";
+                    }
+                    userCookie.Expires = DateTime.Now.AddHours(1);
+                    Response.SetCookie(userCookie);
+                }
+                //Adding Player name, Color, and ID
+                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value });
                 myGame.Players[0].Turn = true;
                 myGame.Players[0].CanThrow = true;
                 counter++;
