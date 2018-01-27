@@ -9,19 +9,6 @@
     }
  }
 }
-@helper onClick(List<GameEngine.GamePlayer> players, Cookie userCookie)
-{
-foreach(GameEngine.GamePlayer player in players)
-{
-    if(player.Turn == true)
-    {
-        if(player.Color == userCookie.Value)
-        {
-                
-        }
-    }
-}
-}
 
 <div class="gameInfo">
     <div><button type="button" id="DiceButton" onclick="location.href='@Url.Action("RollDice")'">Roll Dice!</button></div>
