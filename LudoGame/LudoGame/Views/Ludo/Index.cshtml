@@ -5,5 +5,12 @@
 @Html.Partial("~/Views/Shared/BoardView.cshtml")
 @Html.Partial("~/Views/Shared/DiceView.cshtml")
 
-
+<script type="text/javascript">
+    function timedRefresh(timeoutPeriod) {
+        setTimeout(function () {
+            location.reload(true);
+        }, timeoutPeriod);
+    }
+</script>
+<body onload="JavaScript: timedRefresh(3000)"></body>
 
