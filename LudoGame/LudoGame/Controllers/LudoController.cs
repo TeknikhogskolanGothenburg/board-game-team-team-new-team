@@ -234,6 +234,18 @@ namespace LudoGame.Controllers
                     }
                 }
             }
+            foreach (GamePlayer player in myGame.Players)
+            {
+                player.WinCondition(player);
+                if (player.Win == true)
+                {
+                    return RedirectToAction("WinPage");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Ludo");
+                }
+            }
 
             return RedirectToAction("Index", "Ludo");
         }
@@ -298,6 +310,18 @@ namespace LudoGame.Controllers
                         }
                         break;
                     }
+                }
+            }
+            foreach (GamePlayer player in myGame.Players)
+            {
+                player.WinCondition(player);
+                if (player.Win == true)
+                {
+                    return RedirectToAction("WinPage");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Ludo");
                 }
             }
             return RedirectToAction("Index", "Ludo");
@@ -365,6 +389,18 @@ namespace LudoGame.Controllers
                     }
                 }
             }
+            foreach (GamePlayer player in myGame.Players)
+            {
+                player.WinCondition(player);
+                if (player.Win == true)
+                {
+                    return RedirectToAction("WinPage");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Ludo");
+                }
+            }
             return RedirectToAction("Index", "Ludo");
         }
 
@@ -430,6 +466,19 @@ namespace LudoGame.Controllers
                     }
                 }
             }
+
+            foreach (GamePlayer player in myGame.Players)
+            {
+                player.WinCondition(player);
+                if (player.Win == true)
+                {
+                    return RedirectToAction("WinPage");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Ludo");
+                }
+            }
             return RedirectToAction("Index", "Ludo");
         }
 
@@ -486,7 +535,25 @@ namespace LudoGame.Controllers
 
         public ActionResult WinPage()
         {
-            return View();
+            if (myGame.Players.Count == 0)
+            {
+                return RedirectToAction("StartPage");
+            }
+            else if(myGame.Players.Count > 0)
+            {
+                foreach(GamePlayer player in myGame.Players)
+                {
+                    if(player.Win == true)
+                    {
+                        return View("WinPage");
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("WinPage");
+            }
         }
         
     }

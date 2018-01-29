@@ -1,15 +1,19 @@
 ﻿@model LudoGame.Models.Game
+
 @{
     ViewBag.Title = "WinPage";
 }
+
 @helper CheckWinner(List<GameEngine.GamePlayer> players)
-{ 
-foreach(GameEngine.GamePlayer player in players)
-{
-    if (player.Win == true)
+{     
+    foreach (GameEngine.GamePlayer player in players)
     {
-            <div>@player.Name + "Wins!"</div>;
+        if (player.Win == true)
+        { 
+            <div>@player.Name</div>
+        }
     }
 }
-}
+
+@CheckWinner(Model.Players)
 
