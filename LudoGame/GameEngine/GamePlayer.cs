@@ -14,6 +14,7 @@ namespace GameEngine
         public bool Turn = false;
         public bool CanThrow = false;
         public bool CanMove = false;
+        public bool Win = false;
         public GamePiece One = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Two = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Three = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
@@ -188,6 +189,31 @@ namespace GameEngine
                         person.CanThrow = true;
                     }
                 }
+            }
+        }
+        public void WinCondition(GamePlayer player)
+        {
+            int counter = 0;
+            if (player.One.InPlay == false)
+            {
+                counter++;
+            }
+            if (player.Two.InPlay == false)
+            {
+                counter++;
+            }
+            if (player.Three.InPlay == false)
+            {
+                counter++;
+            }
+            if (player.Four.InPlay == false)
+            {
+                counter++;
+            }
+        
+            if (counter == 4)
+            {
+                player.Win = true;
             }
         }
 

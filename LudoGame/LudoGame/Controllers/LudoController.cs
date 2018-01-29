@@ -484,6 +484,10 @@ namespace LudoGame.Controllers
             return RedirectToAction("Index", "Ludo");
         }
 
+        public ActionResult WinPage()
+        {
+            return View();
+        }
         
     }
 
