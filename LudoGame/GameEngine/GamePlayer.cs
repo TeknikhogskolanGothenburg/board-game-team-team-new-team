@@ -91,7 +91,7 @@ namespace GameEngine
                     {
                         x = 3;
                     }
-                    if(x == 3)
+                    else if(x == 3)
                     {
                         x = 4;
                     }
@@ -140,7 +140,7 @@ namespace GameEngine
                     {
                         x = 2;
                     }
-                    if(x == 2)
+                    else if(x == 2)
                     {
                         x = 3;
                     }
