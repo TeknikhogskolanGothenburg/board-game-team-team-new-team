@@ -1,4 +1,5 @@
-﻿@model LudoGame.Models.Game
+﻿
+@model LudoGame.Models.Game
 
 @{
     ViewBag.Title = "WinPage";
@@ -9,10 +10,11 @@
     foreach (GameEngine.GamePlayer player in players)
     {
         if (player.Win == true)
-        { 
-            <div>@player.Name</div>
+        {
+            <div class="WinningPlayer">@Html.Label(player.Name)</div>
+            break;
         }
-    }
+    }   
 }
 
 @CheckWinner(Model.Players)
