@@ -49,7 +49,7 @@ namespace LudoGame.Controllers
                     {
                         userCookie.Value = "Green";
                     }
-                    userCookie.Expires = DateTime.Now.AddHours(1);
+                    userCookie.Expires = DateTime.Now.AddDays(1);
                     Response.SetCookie(userCookie);
                 }
                 //Adding Player name, Color, ID, and Email.
@@ -558,6 +558,34 @@ namespace LudoGame.Controllers
             }
         }
         
+        public ActionResult NewGame()
+        {
+            if (myGame.Players.Count == 0)
+            {
+                return RedirectToAction("StartPage");
+            }
+            else
+            {
+                if (Request.Cookies["Cookie"] != null)
+                {
+                    var cookie = new HttpCookie("Cookie");
+                    cookie.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(cookie);
+                }
+                myGame = new Game { };
+                counter = 0;
+                red = false;
+                green = false;
+                yellow = false;
+                blue = false;
+                turnCounter = 1;
+                gameStart = true;
+                UserEmail = "";
+
+                return RedirectToAction("StartPage");
+            }
+        }
+
     }
 
     
