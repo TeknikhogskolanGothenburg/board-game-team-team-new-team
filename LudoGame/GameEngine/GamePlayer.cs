@@ -73,18 +73,18 @@ namespace GameEngine
                     }
                 }
 
-                  // 3 players no yellow
+                
                 if (red == true && green == true && blue == true && yellow != true)
                 {
 
-                } // 3 players no blue
+                }// 3 players: red, green, blue
                 else if (red == true && green == true && blue != true && yellow == true)
                 {
                     if(x == 3)
                     {
                         x = 4;
                     }
-                } // 3 players no green
+                }// 3 players: red, green, yellow
                 else if (red == true && green != true && blue == true && yellow == true)
                 {
                     if(x == 2)
@@ -95,7 +95,7 @@ namespace GameEngine
                     {
                         x = 4;
                     }
-                } // 3 players no red
+                }// 3 players: red, blue, yellow
                 else if (red != true && green == true && blue == true && yellow == true)
                 {
                     if (x == 1)
@@ -111,18 +111,18 @@ namespace GameEngine
                         x = 4;
                     }
 
-                } // 2 players no blue or yellow
+                }// 3 players: green, blue, yellow
                 else if (red == true && green == true && blue != true && yellow != true)
                 {
                     
-                } // 2 players no green or blue
+                }// 2 players: red, blue
                 else if (red == true && green != true && blue != true && yellow == true)
                 {
                     if (x == 2)
                     {
                         x = 4;
                     }
-                } // 2 players no red or green
+                }// 2 players: red, yellow
                 else if (red != true && green != true && blue == true && yellow == true)
                 {
                     if (x == 1)
@@ -133,7 +133,7 @@ namespace GameEngine
                     {
                         x = 4;
                     }
-                } // 2 players no red or yellow
+                }// 2 players: blue, yellow
                 else if (red != true && green == true && blue == true && yellow != true)
                 {
                     if(x == 1)
@@ -144,7 +144,26 @@ namespace GameEngine
                     {
                         x = 3;
                     }
-                } // 2 players no blue or yellow
+                }// 2 players: green, blue
+                else if (red == true && green != true && blue == true && yellow != true)
+                {
+                    if(x == 2)
+                    {
+                        x = 3;
+                    }
+                }// 2 players: red, blue
+                else if (red != true && green == true && blue != true && yellow == true)
+                {
+                    if(x == 1)
+                    {
+                        x = 2;
+                    }
+                    else if(x == 2)
+                    {
+                        x = 4;
+                    }
+                }// 2 players: green, yellow
+
 
                 foreach (GamePlayer person in players)
                 {
