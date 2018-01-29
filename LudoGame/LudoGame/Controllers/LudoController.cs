@@ -18,6 +18,7 @@ namespace LudoGame.Controllers
         public static bool blue = false;
         public static int turnCounter = 1;
         public static bool gameStart = true;
+        public static string UserEmail { get; set; }
 
         // GET: /Ludo/
         public ActionResult StartPage()
@@ -25,6 +26,7 @@ namespace LudoGame.Controllers
             string userGameName = Request.Form["myGametxtBox"];
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
+            UserEmail = Request.Form["myEmailBox"];
 
             if (counter < 4 && userNickName != null && userColorChoice != null)
             {
@@ -50,8 +52,8 @@ namespace LudoGame.Controllers
                     userCookie.Expires = DateTime.Now.AddHours(1);
                     Response.SetCookie(userCookie);
                 }
-                //Adding Player name, Color, and ID
-                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value });
+                //Adding Player name, Color, ID, and Email.
+                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value, Email = UserEmail });
                 myGame.Players[0].Turn = true;
                 myGame.Players[0].CanThrow = true;
                 counter++;

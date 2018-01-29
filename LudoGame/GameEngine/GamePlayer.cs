@@ -8,9 +8,10 @@ namespace GameEngine
 {
     public class GamePlayer
     {
-        public string Name;
-        public string Color;
-        public string PlayerID;
+        public string Name { get; set; }
+        public string Color { get; set; }
+        public string PlayerID { get; set; }
+        public string Email { get; set; }
         public bool Turn = false;
         public bool CanThrow = false;
         public bool CanMove = false;
