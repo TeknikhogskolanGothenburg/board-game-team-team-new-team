@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GameEngine;
+using System.Net;
+using System.Net.Mail;
 using LudoGame.Models;
 
 namespace LudoGame.Controllers
@@ -19,16 +21,17 @@ namespace LudoGame.Controllers
         public static int turnCounter = 1;
         public static bool gameStart = true;
         public static string UserEmail { get; set; }
+        public static string UserNickName { get; set; }
 
         // GET: /Ludo/
         public ActionResult StartPage()
         {
             string userGameName = Request.Form["myGametxtBox"];
-            string userNickName = Request.Form["myTextBox"];
+            UserNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
             UserEmail = Request.Form["myEmailBox"];
 
-            if (counter < 4 && userNickName != null && userColorChoice != null)
+            if (counter < 4 && UserNickName != null && userColorChoice != null)
             {
                 if (Request.Cookies["Cookie"] == null)
                 {
@@ -53,7 +56,7 @@ namespace LudoGame.Controllers
                     Response.SetCookie(userCookie);
                 }
                 //Adding Player name, Color, ID, and Email.
-                myGame.Players.Add(new GamePlayer { Name = userNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value, Email = UserEmail });
+                myGame.Players.Add(new GamePlayer { Name = UserNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value, Email = UserEmail });
                 myGame.Players[0].Turn = true;
                 myGame.Players[0].CanThrow = true;
                 counter++;
@@ -80,7 +83,7 @@ namespace LudoGame.Controllers
                     }
                 }
             }
-            if (myGame.Players.Count > 0 && userNickName != null && userColorChoice != null)
+            if (myGame.Players.Count > 0 && UserNickName != null && userColorChoice != null)
             {
                 return RedirectToAction("Index");
             }
@@ -95,6 +98,24 @@ namespace LudoGame.Controllers
         public ActionResult Index()
         {
             return View(myGame);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Email()
+        {
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
+            mailMessage.To.Add(UserEmail);
+            mailMessage.Subject = "Hello from Ludogame";
+            mailMessage.Body = "Hello there " + UserNickName + " its your turn, cmon wake up!!!!!!";
+
+            using (var smtp = new SmtpClient())
+            {
+                //await smtp.SendMailAsync(mailMessage);
+            }
+
+            return View();
         }
 
         public ActionResult RollDice()
