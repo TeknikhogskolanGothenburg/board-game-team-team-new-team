@@ -18,6 +18,7 @@ namespace LudoGame.Controllers
         public static bool blue = false;
         public static int turnCounter = 1;
         public static bool gameStart = true;
+        public static string UserEmail { get; set; }
 
         // GET: /Ludo/
         public ActionResult StartPage()
@@ -25,6 +26,7 @@ namespace LudoGame.Controllers
             string userGameName = Request.Form["myGametxtBox"];
             string userNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
+            UserEmail = Request.Form[""];
 
             if (counter < 4 && userNickName != null && userColorChoice != null)
             {
