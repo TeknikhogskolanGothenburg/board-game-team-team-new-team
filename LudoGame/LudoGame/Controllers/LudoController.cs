@@ -547,14 +547,14 @@ namespace LudoGame.Controllers
                 {
                     if(player.Win == true)
                     {
-                        return View("WinPage");
+                        return View(myGame);
                     }
                 }
                 return RedirectToAction("Index");
             }
             else
             {
-                return View("WinPage");
+                return View(myGame);
             }
         }
         
