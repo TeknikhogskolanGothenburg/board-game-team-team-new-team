@@ -1,13 +1,24 @@
 ﻿@model LudoGame.Models.Game
 @helper turnName(List<GameEngine.GamePlayer> players)
-{
- foreach (GameEngine.GamePlayer player in players)
- {
-    if (player.Turn == true)
     {
-            <div class="currentPlayer">@Html.Label(player.Name)</div>
-    }
- }
+        foreach (GameEngine.GamePlayer player in players)
+        {
+            if (player.Turn == true)
+            {
+                <div class="currentPlayer">@Html.Label(player.Name)</div>
+            }
+        }
+}
+@helper startGame(bool pressed)
+    {
+        if (pressed == true)
+        {
+            <div><button type="button" id="StartGameBtn" hidden="hidden">Start Game</button></div>
+        }
+        else
+        {
+            <div><button type="button" id="StartGameBtn" onclick="location.href='@Url.Action("StartGame")'">Start Game</button></div>
+        }
 }
 
 <div class="gameInfo">
@@ -27,7 +38,7 @@
     <br />
     <br />
     <br />
-    <div><button type="button" id="StartGameBtn">Start Game</button></div>
+    @startGame(Model.buttonPressed)
     <br />
     <div class="dice">
         @if (Model.Dice.Value == 1)
