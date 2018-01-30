@@ -20,6 +20,7 @@ namespace GameEngine
         public GamePiece Two = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Three = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Four = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
+
         public void NextTurn(int x, GamePlayer player, List<GamePlayer> players)
         {
             if(players.Count == 4)
