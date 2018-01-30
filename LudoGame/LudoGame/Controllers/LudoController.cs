@@ -236,6 +236,10 @@ namespace LudoGame.Controllers
                         player.CanThrow = false;
                         player.CanMove = false;
                         player.One.AttackPiece(player, myGame.Players, myGame.Dice, 1);
+                        if(player.CanMove == true)
+                        {
+                            break;
+                        }
                         if (myGame.Players.Count == 4)
                         {
                             if (turnCounter >= 4)
@@ -317,6 +321,10 @@ namespace LudoGame.Controllers
                             player.CanThrow = false;
                             player.CanMove = false;
                             player.Two.AttackPiece(player, myGame.Players, myGame.Dice, 2);
+                            if (player.CanMove == true)
+                            {
+                                break;
+                            }
                             if (myGame.Players.Count == 4)
                             {
                                 if (turnCounter >= 4)
@@ -397,6 +405,10 @@ namespace LudoGame.Controllers
                             player.CanThrow = false;
                             player.CanMove = false;
                             player.Three.AttackPiece(player, myGame.Players, myGame.Dice, 3);
+                            if (player.CanMove == true)
+                            {
+                                break;
+                            }
                             if (myGame.Players.Count == 4)
                             {
                                 if (turnCounter >= 4)
@@ -466,6 +478,7 @@ namespace LudoGame.Controllers
                     {
                         player.CanThrow = true;
                         player.CanMove = false;
+                        player.Four.AttackPiece(player, myGame.Players, myGame.Dice, 4);
                         break;
                     }
                     else if (player.Four.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
@@ -475,6 +488,11 @@ namespace LudoGame.Controllers
                             player.Turn = false;
                             player.CanThrow = false;
                             player.CanMove = false;
+                            player.Four.AttackPiece(player, myGame.Players, myGame.Dice, 4);
+                            if (player.CanMove == true)
+                            {
+                                break;
+                            }
                             if (myGame.Players.Count == 4)
                             {
                                 if (turnCounter >= 4)
