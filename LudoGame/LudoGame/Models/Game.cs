@@ -10,5 +10,6 @@ namespace LudoGame.Models
     {
         public List<GameEngine.GamePlayer> Players = new List<GameEngine.GamePlayer> { };
         public GameEngine.GameDice Dice = new GameDice { };
+        public bool buttonPressed = false;
     }
 }

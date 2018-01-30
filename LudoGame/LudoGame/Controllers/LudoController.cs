@@ -12,7 +12,7 @@ namespace LudoGame.Controllers
 {
     public class LudoController : Controller
     {
-        public static Game myGame = new Game {};
+        public static Game myGame = new Game { };
         public static int counter = 0;
         public static bool red = false;
         public static bool green = false;
@@ -22,10 +22,13 @@ namespace LudoGame.Controllers
         public static bool gameStart = true;
         public static string UserEmail { get; set; }
         public static string UserNickName { get; set; }
+        public static Random num = new Random();
+        public static string NumberOfPlayers { get; set; }
 
         // GET: /Ludo/
         public ActionResult StartPage()
         {
+            NumberOfPlayers = Request.Form["numberOfPlayers"];
             UserNickName = Request.Form["myTextBox"];
             string userColorChoice = Request.Form["colorChoice"];
             UserEmail = Request.Form["myEmailBox"];
@@ -56,8 +59,8 @@ namespace LudoGame.Controllers
                 }
                 //Adding Player name, Color, ID, and Email.
                 myGame.Players.Add(new GamePlayer { Name = UserNickName, Color = userColorChoice, PlayerID = Request.Cookies["Cookie"].Value, Email = UserEmail });
-                myGame.Players[0].Turn = true;
-                myGame.Players[0].CanThrow = true;
+                //myGame.Players[0].Turn = true;
+                //myGame.Players[0].CanThrow = true;
                 counter++;
             }
             if (myGame.Players.Count > 0)
@@ -117,7 +120,36 @@ namespace LudoGame.Controllers
             return View();
         }
 
-        public ActionResult RollDice()
+        public ActionResult StartGame()
+        {
+            if (myGame.Players.Count == Convert.ToInt32(NumberOfPlayers))
+            {
+                int x = num.Next(1, myGame.Players.Count + 1) - 1;
+                if (myGame.Players[x].Color == "Red")
+                {
+                    turnCounter = 1;
+                }
+                else if (myGame.Players[x].Color == "Green")
+                {
+                    turnCounter = 2;
+                }
+                else if (myGame.Players[x].Color == "Blue")
+                {
+                    turnCounter = 3;
+                }
+                else if (myGame.Players[x].Color == "Yellow")
+                {
+                    turnCounter = 4;
+                }
+                myGame.Players[x].Turn = true;
+                myGame.Players[x].CanThrow = true;
+                myGame.buttonPressed = true;
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+    public ActionResult RollDice()
         {
             string currentPlayer = Request.Cookies["Cookie"].Value;
             if (gameStart == true)
@@ -605,6 +637,8 @@ namespace LudoGame.Controllers
                 return RedirectToAction("StartPage");
             }
         }
+
+        
 
     }
 
