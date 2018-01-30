@@ -223,6 +223,10 @@ namespace GameEngine
                     else if (thatPlayer.Two.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                     {
                         player.One.Position -= dice.Value;
+                        if (player.One.Position < 0)
+                        {
+                            player.One.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -231,6 +235,10 @@ namespace GameEngine
                     else if (thatPlayer.Three.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
                     {
                         player.One.Position -= dice.Value;
+                        if (player.One.Position < 0)
+                        {
+                            player.One.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -239,6 +247,10 @@ namespace GameEngine
                     else if (thatPlayer.Four.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                     {
                         player.One.Position -= dice.Value;
+                        if (player.One.Position < 0)
+                        {
+                            player.One.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -273,6 +285,10 @@ namespace GameEngine
                     else if (thatPlayer.One.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                     {
                         player.Two.Position -= dice.Value;
+                        if (player.Two.Position < 0)
+                        {
+                            player.Two.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -281,6 +297,10 @@ namespace GameEngine
                     else if (thatPlayer.Three.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
                     {
                         player.Two.Position -= dice.Value;
+                        if (player.Two.Position < 0)
+                        {
+                            player.Two.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -289,6 +309,10 @@ namespace GameEngine
                     else if (thatPlayer.Four.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                     {
                         player.Two.Position -= dice.Value;
+                        if (player.Two.Position < 0)
+                        {
+                            player.Two.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -323,6 +347,10 @@ namespace GameEngine
                     else if (thatPlayer.One.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                     {
                         player.Three.Position -= dice.Value;
+                        if (player.Three.Position < 0)
+                        {
+                            player.Three.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -331,6 +359,10 @@ namespace GameEngine
                     else if (thatPlayer.Two.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                     {
                         player.Three.Position -= dice.Value;
+                        if (player.Three.Position < 0)
+                        {
+                            player.Three.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -339,6 +371,10 @@ namespace GameEngine
                     else if (thatPlayer.Four.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                     {
                         player.Three.Position -= dice.Value;
+                        if (player.Three.Position < 0)
+                        {
+                            player.Three.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -373,6 +409,10 @@ namespace GameEngine
                     else if (thatPlayer.One.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                     {
                         player.Four.Position -= dice.Value;
+                        if(player.Four.Position < 0)
+                        {
+                            player.Four.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -381,6 +421,10 @@ namespace GameEngine
                     else if (thatPlayer.Two.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                     {
                         player.Four.Position -= dice.Value;
+                        if (player.Four.Position < 0)
+                        {
+                            player.Four.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
@@ -389,6 +433,10 @@ namespace GameEngine
                     else if (thatPlayer.Three.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
                     {
                         player.Four.Position -= dice.Value;
+                        if (player.Four.Position < 0)
+                        {
+                            player.Four.Position = 0;
+                        }
                         player.Turn = true;
                         player.CanMove = true;
                         player.CanThrow = false;
