@@ -108,10 +108,14 @@ namespace LudoGame.Controllers
             mailMessage.To.Add(UserEmail);
             mailMessage.Subject = "Hello from Ludogame";
             mailMessage.Body = "Hello there " + UserNickName + " its your turn, cmon wake up!!!!!!";
+            mailMessage.IsBodyHtml = true;
 
-            using (var smtp = new SmtpClient())
+            SmtpClient smtpClient = new SmtpClient();
+
+            try{smtpClient.Send(mailMessage);}
+            catch
             {
-                //await smtp.SendMailAsync(mailMessage);
+                
             }
 
             return View();
