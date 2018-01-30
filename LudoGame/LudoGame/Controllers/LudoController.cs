@@ -33,6 +33,11 @@ namespace LudoGame.Controllers
             string userColorChoice = Request.Form["colorChoice"];
             UserEmail = Request.Form["myEmailBox"];
 
+            if(Request.Cookies["Cookie"] != null)
+            {
+                return RedirectToAction("Index", "Ludo");
+            }
+
             if (counter < 4 && UserNickName != null && userColorChoice != null)
             {
                 if (Request.Cookies["Cookie"] == null)
