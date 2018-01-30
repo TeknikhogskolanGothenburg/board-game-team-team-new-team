@@ -101,6 +101,7 @@
     <Content Include="Content\LudoStyle.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Themesong.mp3" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
