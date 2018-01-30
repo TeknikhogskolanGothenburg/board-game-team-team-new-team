@@ -205,10 +205,7 @@ namespace GameEngine
         }
         public static void SendEmail(string Email)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp.live.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential("userName", "password");
-            smtpClient.UseDefaultCredentials = false;
-
+            SmtpClient smtpClient = new SmtpClient();
 
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");

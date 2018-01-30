@@ -109,7 +109,11 @@ namespace LudoGame.Controllers
 
         public ActionResult StartGame()
         {
-            //GamePlayer.SendEmail(myGame.Players[0].Email);
+            if(UserEmail != null)
+            {
+                GamePlayer.SendEmail(UserEmail);
+            }
+            
 
             if (myGame.Players.Count == Convert.ToInt32(NumberOfPlayers))
             {
