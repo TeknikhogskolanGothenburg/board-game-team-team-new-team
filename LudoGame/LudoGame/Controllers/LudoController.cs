@@ -113,7 +113,7 @@ namespace LudoGame.Controllers
             SmtpClient smtpClient = new SmtpClient();
 
             try{smtpClient.Send(mailMessage);}
-            catch(Exception ex)
+            catch
             {
                 
             }
