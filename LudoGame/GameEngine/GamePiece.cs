@@ -200,139 +200,142 @@ namespace GameEngine
             {
                 foreach (GamePlayer thatPlayer in players)
                 {
-                    if (thatPlayer.One.Position == player.One.Position && thatPlayer.Color != player.Color)
+                    if (player.One.Position != 0 && player.One.Position > 53)
                     {
-                        thatPlayer.One.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.One.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Two.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.One.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Three.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.One.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Four.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
-                    {
-                        if(player.One.Position == 40 && player.Color == "Red")
+                        if (thatPlayer.One.Position == player.One.Position && thatPlayer.Color != player.Color)
                         {
-                            player.One.Position = 0;
+                            thatPlayer.One.Position = 0;
+                            break;
                         }
-                        else if(player.One.Position == 1 && player.Color == "Green")
+                        else if (thatPlayer.Two.Position == player.One.Position && thatPlayer.Color != player.Color)
                         {
-                            player.One.Position = 0;
+                            thatPlayer.Two.Position = 0;
+                            break;
                         }
-                        else if (player.One.Position == 14 && player.Color == "Blue")
+                        else if (thatPlayer.Three.Position == player.One.Position && thatPlayer.Color != player.Color)
                         {
-                            player.One.Position = 0;
+                            thatPlayer.Three.Position = 0;
+                            break;
                         }
-                        else if (player.One.Position == 27 && player.Color == "Yellow")
+                        else if (thatPlayer.Four.Position == player.One.Position && thatPlayer.Color != player.Color)
                         {
-                            player.One.Position = 0;
+                            thatPlayer.Four.Position = 0;
+                            break;
                         }
-                        else
+                        else if (thatPlayer.Two.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                         {
-                            player.One.Position -= dice.Value;
-                        }
-                        if (player.One.Position < 0)
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.One.Position == 40 && player.Color == "Red")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 1 && player.Color == "Green")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 14 && player.Color == "Blue")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else
+                            {
+                                player.One.Position -= dice.Value;
+                            }
+                            if (player.One.Position < 0)
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
-                    {
-                        if (player.One.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Three.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
                         {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 1 && player.Color == "Green")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 14 && player.Color == "Blue")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else
-                        {
-                            player.One.Position -= dice.Value;
-                        }
-                        if (player.One.Position < 0)
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.One.Position == 40 && player.Color == "Red")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 1 && player.Color == "Green")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 14 && player.Color == "Blue")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else
+                            {
+                                player.One.Position -= dice.Value;
+                            }
+                            if (player.One.Position < 0)
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
-                    {
-                        if (player.One.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Four.Position == player.One.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                         {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 1 && player.Color == "Green")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 14 && player.Color == "Blue")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.One.Position = 0;
-                        }
-                        else
-                        {
-                            player.One.Position -= dice.Value;
-                        }
-                        if (player.One.Position < 0)
-                        {
-                            player.One.Position = 0;
-                        }
-                        else if (player.One.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.One.Position == 40 && player.Color == "Red")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 1 && player.Color == "Green")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 14 && player.Color == "Blue")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.One.Position = 0;
+                            }
+                            else
+                            {
+                                player.One.Position -= dice.Value;
+                            }
+                            if (player.One.Position < 0)
+                            {
+                                player.One.Position = 0;
+                            }
+                            else if (player.One.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
                     }
                 }
             }
@@ -340,139 +343,142 @@ namespace GameEngine
             {
                 foreach (GamePlayer thatPlayer in players)
                 {
-                    if (thatPlayer.One.Position == player.Two.Position && thatPlayer.Color != player.Color)
+                    if (player.Two.Position != 0 && player.Two.Position > 53)
                     {
-                        thatPlayer.One.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.Two.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Two.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.Two.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Three.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.Two.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Four.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.One.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
-                    {
-                        if (player.Two.Position == 40 && player.Color == "Red")
+                        if (thatPlayer.One.Position == player.Two.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Two.Position = 0;
+                            thatPlayer.One.Position = 0;
+                            break;
                         }
-                        else if (player.Two.Position == 1 && player.Color == "Green")
+                        else if (thatPlayer.Two.Position == player.Two.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Two.Position = 0;
+                            thatPlayer.Two.Position = 0;
+                            break;
                         }
-                        else if (player.Two.Position == 14 && player.Color == "Blue")
+                        else if (thatPlayer.Three.Position == player.Two.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Two.Position = 0;
+                            thatPlayer.Three.Position = 0;
+                            break;
                         }
-                        else if (player.Two.Position == 27 && player.Color == "Yellow")
+                        else if (thatPlayer.Four.Position == player.Two.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Two.Position = 0;
+                            thatPlayer.Four.Position = 0;
+                            break;
                         }
-                        else
+                        else if (thatPlayer.One.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                         {
-                            player.Two.Position -= dice.Value;
-                        }
-                        if (player.Two.Position < 0)
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Two.Position == 40 && player.Color == "Red")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 1 && player.Color == "Green")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else
+                            {
+                                player.Two.Position -= dice.Value;
+                            }
+                            if (player.Two.Position < 0)
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
-                    {
-                        if (player.Two.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Three.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
                         {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 1 && player.Color == "Green")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else
-                        {
-                            player.Two.Position -= dice.Value;
-                        }
-                        if (player.Two.Position < 0)
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Two.Position == 40 && player.Color == "Red")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 1 && player.Color == "Green")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else
+                            {
+                                player.Two.Position -= dice.Value;
+                            }
+                            if (player.Two.Position < 0)
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
-                    {
-                        if (player.Two.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Four.Position == player.Two.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                         {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 1 && player.Color == "Green")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else
-                        {
-                            player.Two.Position -= dice.Value;
-                        }
-                        if (player.Two.Position < 0)
-                        {
-                            player.Two.Position = 0;
-                        }
-                        else if (player.Two.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Two.Position == 40 && player.Color == "Red")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 1 && player.Color == "Green")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else
+                            {
+                                player.Two.Position -= dice.Value;
+                            }
+                            if (player.Two.Position < 0)
+                            {
+                                player.Two.Position = 0;
+                            }
+                            else if (player.Two.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
                     }
                 }
             }
@@ -480,139 +486,143 @@ namespace GameEngine
             {
                 foreach (GamePlayer thatPlayer in players)
                 {
-                    if (thatPlayer.One.Position == player.Three.Position && thatPlayer.Color != player.Color)
+                    if (player.Three.Position != 0 && player.Three.Position > 53)
                     {
-                        thatPlayer.One.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.Three.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Two.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.Three.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Three.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.Three.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Four.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.One.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
-                    {
-                        if (player.Three.Position == 40 && player.Color == "Red")
+
+                        if (thatPlayer.One.Position == player.Three.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Three.Position = 0;
+                            thatPlayer.One.Position = 0;
+                            break;
                         }
-                        else if (player.Three.Position == 1 && player.Color == "Green")
+                        else if (thatPlayer.Two.Position == player.Three.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Three.Position = 0;
+                            thatPlayer.Two.Position = 0;
+                            break;
                         }
-                        else if (player.Three.Position == 14 && player.Color == "Blue")
+                        else if (thatPlayer.Three.Position == player.Three.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Three.Position = 0;
+                            thatPlayer.Three.Position = 0;
+                            break;
                         }
-                        else if (player.Three.Position == 27 && player.Color == "Yellow")
+                        else if (thatPlayer.Four.Position == player.Three.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Three.Position = 0;
+                            thatPlayer.Four.Position = 0;
+                            break;
                         }
-                        else
+                        else if (thatPlayer.One.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                         {
-                            player.Three.Position -= dice.Value;
-                        }
-                        if (player.Three.Position < 0)
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Three.Position == 40 && player.Color == "Red")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 1 && player.Color == "Green")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else
+                            {
+                                player.Three.Position -= dice.Value;
+                            }
+                            if (player.Three.Position < 0)
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
-                    {
-                        if (player.Three.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Two.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                         {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 1 && player.Color == "Green")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else
-                        {
-                            player.Three.Position -= dice.Value;
-                        }
-                        if (player.Three.Position < 0)
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Three.Position == 40 && player.Color == "Red")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 1 && player.Color == "Green")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else
+                            {
+                                player.Three.Position -= dice.Value;
+                            }
+                            if (player.Three.Position < 0)
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
-                    {
-                        if (player.Three.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Four.Position == player.Three.Position && thatPlayer.Color == player.Color && thatPlayer.Four.Position < 58)
                         {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 1 && player.Color == "Green")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else
-                        {
-                            player.Three.Position -= dice.Value;
-                        }
-                        if (player.Three.Position < 0)
-                        {
-                            player.Three.Position = 0;
-                        }
-                        else if (player.Three.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Three.Position == 40 && player.Color == "Red")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 1 && player.Color == "Green")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else
+                            {
+                                player.Three.Position -= dice.Value;
+                            }
+                            if (player.Three.Position < 0)
+                            {
+                                player.Three.Position = 0;
+                            }
+                            else if (player.Three.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
                     }
                 }
             }
@@ -620,140 +630,143 @@ namespace GameEngine
             {
                 foreach (GamePlayer thatPlayer in players)
                 {
-                    if (thatPlayer.One.Position == player.Four.Position && thatPlayer.Color != player.Color)
+                    if (player.Four.Position != 0 && player.Four.Position > 53)
                     {
-                        thatPlayer.One.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.Four.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Two.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.Four.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Three.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.Four.Position == player.Four.Position && thatPlayer.Color != player.Color)
-                    {
-                        thatPlayer.Four.Position = 0;
-                        break;
-                    }
-                    else if (thatPlayer.One.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
-                    {
-                        if (player.Four.Position == 40 && player.Color == "Red")
+                        if (thatPlayer.One.Position == player.Four.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Four.Position = 0;
+                            thatPlayer.One.Position = 0;
+                            break;
                         }
-                        else if (player.Four.Position == 1 && player.Color == "Green")
+                        else if (thatPlayer.Two.Position == player.Four.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Four.Position = 0;
+                            thatPlayer.Two.Position = 0;
+                            break;
                         }
-                        else if (player.Four.Position == 14 && player.Color == "Blue")
+                        else if (thatPlayer.Three.Position == player.Four.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Four.Position = 0;
+                            thatPlayer.Three.Position = 0;
+                            break;
                         }
-                        else if (player.Four.Position == 27 && player.Color == "Yellow")
+                        else if (thatPlayer.Four.Position == player.Four.Position && thatPlayer.Color != player.Color)
                         {
-                            player.Four.Position = 0;
+                            thatPlayer.Four.Position = 0;
+                            break;
                         }
-                        else
+                        else if (thatPlayer.One.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.One.Position < 58)
                         {
-                            player.Four.Position -= dice.Value;
-                        }
-                        if (player.Four.Position < 0)
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 0 && dice.Value == 6)
-                        {
+                            if (player.Four.Position == 40 && player.Color == "Red")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 1 && player.Color == "Green")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else
+                            {
+                                player.Four.Position -= dice.Value;
+                            }
+                            if (player.Four.Position < 0)
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Two.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
-                    {
-                        if (player.Four.Position == 40 && player.Color == "Red")
+                        else if (thatPlayer.Two.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Two.Position < 58)
                         {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 1 && player.Color == "Green")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else
-                        {
-                            player.Four.Position -= dice.Value;
-                        }
-                        if (player.Four.Position < 0)
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 0 && dice.Value == 6)
-                        {
-                            player.Turn = true;
-                            player.CanMove = true;
-                            player.CanThrow = false;
-                            break;
-                        }
+                            if (player.Four.Position == 40 && player.Color == "Red")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 1 && player.Color == "Green")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else
+                            {
+                                player.Four.Position -= dice.Value;
+                            }
+                            if (player.Four.Position < 0)
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
 
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
-                    }
-                    else if (thatPlayer.Three.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
-                    {
-                        if (player.Four.Position == 40 && player.Color == "Red")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 1 && player.Color == "Green")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 14 && player.Color == "Blue")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if (player.Four.Position == 27 && player.Color == "Yellow")
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else
-                        {
-                            player.Four.Position -= dice.Value;
-                        }
-                        if (player.Four.Position < 0)
-                        {
-                            player.Four.Position = 0;
-                        }
-                        else if(player.Four.Position == 0 && dice.Value == 6)
-                        {
                             player.Turn = true;
                             player.CanMove = true;
                             player.CanThrow = false;
                             break;
                         }
-                        player.Turn = true;
-                        player.CanMove = true;
-                        player.CanThrow = false;
-                        break;
+                        else if (thatPlayer.Three.Position == player.Four.Position && thatPlayer.Color == player.Color && thatPlayer.Three.Position < 58)
+                        {
+                            if (player.Four.Position == 40 && player.Color == "Red")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 1 && player.Color == "Green")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 14 && player.Color == "Blue")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 27 && player.Color == "Yellow")
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else
+                            {
+                                player.Four.Position -= dice.Value;
+                            }
+                            if (player.Four.Position < 0)
+                            {
+                                player.Four.Position = 0;
+                            }
+                            else if (player.Four.Position == 0 && dice.Value == 6)
+                            {
+                                player.Turn = true;
+                                player.CanMove = true;
+                                player.CanThrow = false;
+                                break;
+                            }
+                            player.Turn = true;
+                            player.CanMove = true;
+                            player.CanThrow = false;
+                            break;
+                        }
                     }
                 }
             }
