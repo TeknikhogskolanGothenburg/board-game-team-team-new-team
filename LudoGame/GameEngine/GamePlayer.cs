@@ -216,11 +216,7 @@ namespace GameEngine
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.UseDefaultCredentials = true;
 
-            try { smtpClient.Send(mailMessage); }
-            catch
-            {
-
-            }
+            smtpClient.Send(mailMessage);
         }
 
         public static void PlaySound()
