@@ -99,28 +99,6 @@ namespace LudoGame.Controllers
             return View(myGame);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Email()
-        {
-            MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
-            mailMessage.To.Add(UserEmail);
-            mailMessage.Subject = "Hello from Ludogame";
-            mailMessage.Body = "Hello there " + UserNickName + " its your turn, cmon wake up!!!!!!";
-            mailMessage.IsBodyHtml = true;
-
-            SmtpClient smtpClient = new SmtpClient();
-
-            try{smtpClient.Send(mailMessage);}
-            catch
-            {
-                
-            }
-
-            return View();
-        }
-
         public ActionResult RollDice()
         {
             string currentPlayer = Request.Cookies["Cookie"].Value;
