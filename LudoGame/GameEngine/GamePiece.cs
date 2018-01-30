@@ -200,40 +200,40 @@ namespace GameEngine
             {
                 if (x == 1)
                 {
-                    if (player.One.Position == blockPlayer.One.Position ||
+                    if ((player.One.Position == blockPlayer.One.Position ||
                        player.One.Position == blockPlayer.Two.Position ||
                        player.One.Position == blockPlayer.Three.Position ||
-                       player.One.Position == blockPlayer.Four.Position)
+                       player.One.Position == blockPlayer.Four.Position) && (blockPlayer.Color != player.Color))
                     {
                         blockCounter++;
                     }
                 }
                 else if (x == 2)
                 {
-                    if(player.Two.Position == blockPlayer.One.Position ||
+                    if((player.Two.Position == blockPlayer.One.Position ||
                    player.Two.Position == blockPlayer.Two.Position ||
                    player.Two.Position == blockPlayer.Three.Position||
-                   player.Two.Position == blockPlayer.Four.Position)
+                   player.Two.Position == blockPlayer.Four.Position) && (blockPlayer.Color != player.Color))
                     {
                         blockCounter++;
                     }
                 }
                 else if (x == 3)
                 {
-                    if(player.Three.Position == blockPlayer.One.Position ||
+                    if((player.Three.Position == blockPlayer.One.Position ||
                    player.Three.Position == blockPlayer.Two.Position ||
                    player.Three.Position == blockPlayer.Three.Position ||
-                   player.Three.Position == blockPlayer.Four.Position)
+                   player.Three.Position == blockPlayer.Four.Position) && (blockPlayer.Color != player.Color))
                     {
                         blockCounter++;
                     }
                 }
                 else if (x == 4)
                 {
-                    if(player.Four.Position == blockPlayer.One.Position ||
+                    if((player.Four.Position == blockPlayer.One.Position ||
                    player.Four.Position == blockPlayer.Two.Position ||
                    player.Four.Position == blockPlayer.Three.Position ||
-                   player.Four.Position == blockPlayer.Four.Position)
+                   player.Four.Position == blockPlayer.Four.Position) && (blockPlayer.Color != player.Color))
                     {
                         blockCounter++;
                     }
