@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
 
 namespace GameEngine
 {
@@ -195,29 +197,29 @@ namespace GameEngine
         }
         public void WinCondition(GamePlayer player)
         {
-            int counter = 0;
-            if (player.One.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Two.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Three.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Four.InPlay == false)
-            {
-                counter++;
-            }
-        
-            if (counter == 4)
+            if(player.One.InPlay == false && player.Two.InPlay == false && player.Three.InPlay == false && player.Four.InPlay == false)
             {
                 player.Win = true;
             }
-        }
 
+        }
+        public static void SendEmail(string Email)
+        {
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
+            mailMessage.To.Add(Email);
+            mailMessage.Subject = "Hello from Ludogame";
+            mailMessage.Body = "Hello there!! ITS TIME TOOO PLAAAAY LUUUDOGAME, WAKIE WAKIE!!!";
+            mailMessage.IsBodyHtml = true;
+
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.UseDefaultCredentials = true;
+
+            try { smtpClient.Send(mailMessage); }
+            catch
+            {
+
+            }
+        }
     }
 }
