@@ -1,11 +1,6 @@
 ﻿
 @model LudoGame.Models.Game
 
-<audio src="~/Content/Themesong.mp3" autoplay>
-    <p>If you are reading this, it is because your browser does not support the audio element.     </p>
-    <embed src="~/Content/Themesong.mp3" width="180" height="90" hidden="true" />
-</audio>
-
 @helper PlayerBrickHelper(List<GameEngine.GamePlayer> players, string color, int num)
     {
         foreach (GameEngine.GamePlayer player in players)
