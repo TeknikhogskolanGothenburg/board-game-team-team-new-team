@@ -104,6 +104,8 @@ namespace LudoGame.Controllers
 
         public ActionResult StartGame()
         {
+            GamePlayer.SendEmail(UserEmail);
+
             if (myGame.Players.Count == Convert.ToInt32(NumberOfPlayers))
             {
                 int x = num.Next(1, myGame.Players.Count + 1) - 1;

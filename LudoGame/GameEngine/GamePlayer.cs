@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Media;
 
 namespace GameEngine
 {
@@ -22,6 +23,7 @@ namespace GameEngine
         public GamePiece Two = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Three = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
         public GamePiece Four = new GamePiece { InPlay = true, Counter = 0, Position = 0 };
+
         public void NextTurn(int x, GamePlayer player, List<GamePlayer> players)
         {
             if(players.Count == 4)
@@ -214,11 +216,13 @@ namespace GameEngine
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.UseDefaultCredentials = true;
 
-            try { smtpClient.Send(mailMessage); }
-            catch
-            {
+            smtpClient.Send(mailMessage);
+        }
 
-            }
+        public static void PlaySound()
+        {
+            SoundPlayer simplesound = new SoundPlayer(@"C:\Users\Karlm\Source\Repos\board-game-team-team-new-team\LudoGame\LudoGame\Content\Lets get ready.mp3");
+            simplesound.Play();
         }
     }
 }
