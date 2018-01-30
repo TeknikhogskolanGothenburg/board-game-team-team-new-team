@@ -133,7 +133,7 @@ namespace LudoGame.Controllers
             return RedirectToAction("Index");
         }
 
-    public ActionResult RollDice()
+        public ActionResult RollDice()
         {
             string currentPlayer = Request.Cookies["Cookie"].Value;
             if (gameStart == true)
@@ -217,6 +217,7 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.One.InPlay == true)
                 {
                     player.One.MovePiece(player, myGame.Dice, player.One);
+                    player.One.AttackPiece(player, myGame.Players, 1);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
@@ -295,6 +296,7 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Two.InPlay == true)
                 {
                     player.Two.MovePiece(player, myGame.Dice, player.Two);
+                    player.Two.AttackPiece(player, myGame.Players, 2);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
@@ -372,6 +374,7 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Three.InPlay == true)
                 {
                     player.Three.MovePiece(player, myGame.Dice, player.Three);
+                    player.Three.AttackPiece(player, myGame.Players, 3);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
@@ -449,6 +452,7 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Four.InPlay == true)
                 {
                     player.Four.MovePiece(player, myGame.Dice, player.Four);
+                    player.Four.AttackPiece(player, myGame.Players, 4);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
