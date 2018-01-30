@@ -205,15 +205,17 @@ namespace GameEngine
         }
         public static void SendEmail(string Email)
         {
+            SmtpClient smtpClient = new SmtpClient("smtp.live.com", 587);
+            smtpClient.Credentials = new System.Net.NetworkCredential("userName", "password");
+            smtpClient.UseDefaultCredentials = false;
+
+
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
             mailMessage.To.Add(Email);
             mailMessage.Subject = "Hello from Ludogame";
             mailMessage.Body = "Hello there!! ITS TIME TOOO PLAAAAY LUUUDOGAME, WAKIE WAKIE!!!";
             mailMessage.IsBodyHtml = true;
-
-            SmtpClient smtpClient = new SmtpClient();
-            smtpClient.UseDefaultCredentials = true;
 
             smtpClient.Send(mailMessage);
         }
