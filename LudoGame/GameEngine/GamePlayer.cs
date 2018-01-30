@@ -194,28 +194,11 @@ namespace GameEngine
         }
         public void WinCondition(GamePlayer player)
         {
-            int counter = 0;
-            if (player.One.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Two.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Three.InPlay == false)
-            {
-                counter++;
-            }
-            if (player.Four.InPlay == false)
-            {
-                counter++;
-            }
-        
-            if (counter == 4)
+            if(player.One.InPlay == false && player.Two.InPlay == false && player.Three.InPlay == false && player.Four.InPlay == false)
             {
                 player.Win = true;
             }
+
         }
 
     }
