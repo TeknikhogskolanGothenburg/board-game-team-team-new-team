@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Media;
 
 namespace GameEngine
 {
@@ -220,6 +221,12 @@ namespace GameEngine
             {
 
             }
+        }
+
+        public static void PlaySound()
+        {
+            SoundPlayer simplesound = new SoundPlayer(@"C:\Users\Karlm\Source\Repos\board-game-team-team-new-team\LudoGame\LudoGame\Content\Lets get ready.mp3");
+            simplesound.Play();
         }
     }
 }

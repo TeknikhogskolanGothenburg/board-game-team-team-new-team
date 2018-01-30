@@ -14,10 +14,11 @@ namespace UnitTestGameEngine
         [TestMethod]
         public void ControlIfGameHasWinner()
         {
-            if (gameplayer.One.InPlay == false)
+            if (gameplayer.One.InPlay == false && gameplayer.Two.InPlay == false && gameplayer.Three.InPlay == false && gameplayer.Four.InPlay == false)
             {
-                return 
+                gameplayer.Win = true;
             }
+            Assert.IsTrue(gameplayer.Win);
         }
     }
 }
