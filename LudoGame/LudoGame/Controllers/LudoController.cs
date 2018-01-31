@@ -109,7 +109,7 @@ namespace LudoGame.Controllers
 
         public ActionResult StartGame()
         {
-            if(UserEmail != null)
+            if(UserEmail != "")
             {
                 GamePlayer.SendEmail(UserEmail);
             }
@@ -633,7 +633,14 @@ namespace LudoGame.Controllers
         {
             if (myGame.Players.Count == 0)
             {
+                if (Request.Cookies["Cookie"] != null)
+                {
+                    var cookie = new HttpCookie("Cookie");
+                    cookie.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(cookie);
+                }
                 return RedirectToAction("StartPage");
+                
             }
             else
             {

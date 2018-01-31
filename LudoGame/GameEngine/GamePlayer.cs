@@ -209,12 +209,15 @@ namespace GameEngine
 
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
-            mailMessage.To.Add(Email);
-            mailMessage.Subject = "Hello from Ludogame";
-            mailMessage.Body = "Hello there!! ITS TIME TOOO PLAAAAY LUUUDOGAME, WAKIE WAKIE!!!";
-            mailMessage.IsBodyHtml = true;
+            if (Email != null)
+            {
+                mailMessage.To.Add(Email);
+                mailMessage.Subject = "Hello from Ludogame";
+                mailMessage.Body = "Hello there!! ITS TIME TOOO PLAAAAY LUUUDOGAME, WAKIE WAKIE!!!";
+                mailMessage.IsBodyHtml = true;
 
-            smtpClient.Send(mailMessage);
+                smtpClient.Send(mailMessage);
+            }
         }
     }
 }
