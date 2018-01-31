@@ -102,6 +102,11 @@ namespace LudoGame.Controllers
             return View(myGame);
         }
 
+        public ActionResult Rules()
+        {
+            return View();
+        }
+
         public ActionResult StartGame()
         {
             if(UserEmail != "")
