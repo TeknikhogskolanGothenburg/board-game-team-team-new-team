@@ -25,32 +25,32 @@
 >
 >The NewGame View is a reference for a button that exists in Index and in the WinPage. It resets all the static variables to their original values and redirects the players to the StartPage to start anew.
 
-* Which components does your application consist of?
+## Which components does your application consist of?
 1 Controller
 11 Views
-*StartPage
-*Index
-*StartGame
-*RollDice
-*MovePiece1
-*MovePiece2
-*MovePiece3
-*MovePiece4
-*EndTurn
-*WinPage
-*NewGame
+* StartPage
+* Index
+* StartGame
+* RollDice
+* MovePiece1
+* MovePiece2
+* MovePiece3
+* MovePiece4
+* EndTurn
+* WinPage
+* NewGame
 >
 >
 3 Classes
-*GamePlayer
-*GamePiece
-*GameDice
+* GamePlayer
+* GamePiece
+* GameDice
 >
 >
 1 Model
-*GamePlayer List
-*GameDice
-*buttonPressed bool
+* GamePlayer List
+* GameDice
+* buttonPressed bool
 
 
 
