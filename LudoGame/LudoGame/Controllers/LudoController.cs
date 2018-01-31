@@ -221,13 +221,11 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.One.InPlay == true)
                 {
                     player.One.MovePiece(player, myGame.Dice, player.One);
-                    player.One.AttackPiece(player, myGame.Players,myGame.Dice, 1);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
                         player.CanMove = false;
                         player.One.AttackPiece(player, myGame.Players, myGame.Dice, 1);
-                        break;
                     }
                     else if (player.One.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
@@ -304,13 +302,11 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Two.InPlay == true)
                 {
                     player.Two.MovePiece(player, myGame.Dice, player.Two);
-                    player.Two.AttackPiece(player, myGame.Players, myGame.Dice, 2);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
                         player.CanMove = false;
                         player.Two.AttackPiece(player, myGame.Players, myGame.Dice, 2);
-                        break;
                     }
                     else if (player.Two.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
@@ -388,13 +384,11 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Three.InPlay == true)
                 {
                     player.Three.MovePiece(player, myGame.Dice, player.Three);
-                    player.Three.AttackPiece(player, myGame.Players, myGame.Dice, 3);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
                         player.CanMove = false;
                         player.Three.AttackPiece(player, myGame.Players, myGame.Dice, 3);
-                        break;
                     }
                     else if (player.Three.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {
@@ -472,13 +466,11 @@ namespace LudoGame.Controllers
                 if (player.CanMove && player.Four.InPlay == true)
                 {
                     player.Four.MovePiece(player, myGame.Dice, player.Four);
-                    player.Four.AttackPiece(player, myGame.Players, myGame.Dice, 4);
                     if (myGame.Dice.Value == 6 && player.Turn == true)
                     {
                         player.CanThrow = true;
                         player.CanMove = false;
                         player.Four.AttackPiece(player, myGame.Players, myGame.Dice, 4);
-                        break;
                     }
                     else if (player.Four.Position != 0 && myGame.Dice.Value < 6 && player.Turn == true)
                     {

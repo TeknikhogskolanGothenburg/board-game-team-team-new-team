@@ -238,7 +238,7 @@ namespace GameEngine
                         {
                             player.One.Position = 0;
                         }
-                        else
+                        else if(player.One.Position > 0)
                         {
                             player.One.Position -= dice.Value;
                         }
@@ -276,7 +276,7 @@ namespace GameEngine
                         {
                             player.One.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.One.Position -= dice.Value;
                         }
@@ -314,7 +314,7 @@ namespace GameEngine
                         {
                             player.One.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.One.Position -= dice.Value;
                         }
@@ -378,7 +378,7 @@ namespace GameEngine
                         {
                             player.Two.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Two.Position -= dice.Value;
                         }
@@ -416,7 +416,7 @@ namespace GameEngine
                         {
                             player.Two.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Two.Position -= dice.Value;
                         }
@@ -454,7 +454,7 @@ namespace GameEngine
                         {
                             player.Two.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Two.Position -= dice.Value;
                         }
@@ -518,7 +518,7 @@ namespace GameEngine
                         {
                             player.Three.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Three.Position -= dice.Value;
                         }
@@ -556,7 +556,7 @@ namespace GameEngine
                         {
                             player.Three.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Three.Position -= dice.Value;
                         }
@@ -594,7 +594,7 @@ namespace GameEngine
                         {
                             player.Three.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Three.Position -= dice.Value;
                         }
@@ -658,7 +658,7 @@ namespace GameEngine
                         {
                             player.Four.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Four.Position -= dice.Value;
                         }
@@ -696,7 +696,7 @@ namespace GameEngine
                         {
                             player.Four.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Four.Position -= dice.Value;
                         }
@@ -735,7 +735,7 @@ namespace GameEngine
                         {
                             player.Four.Position = 0;
                         }
-                        else
+                        else if (player.One.Position > 0)
                         {
                             player.Four.Position -= dice.Value;
                         }
