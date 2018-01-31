@@ -7,7 +7,7 @@
 >
 >Once the Enter button is clicked, the player data is saved in a GamePlayer class within the Game model and a player specific cookie is created.
 >
->The Index View displays our html and css. The html parses through all the players' data on every refresh and populates the boardaccordingly (based on the positions of the players pieces). 
+>The Index View displays our html and css. The html parses through all the players' data on every refresh and populates the board accordingly (based on the positions of the players pieces). 
 >
 >The StartGame View is a reference point for a button(Start Game) in out html file, to randomly select a player so thatit is their turn, afterwards it redirects to the Index Controller automatically updating the page.
 >
