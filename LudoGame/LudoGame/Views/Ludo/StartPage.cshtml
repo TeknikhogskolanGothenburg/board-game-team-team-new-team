@@ -10,11 +10,14 @@
     <p style="font-size: 140%;"><b>Winner winner chicken dinner!</b></p>
     <br />
 
-    <audio src="~/Content/Olsen Brothers - Wings Of Love.mp3" autoplay>
+    <audio src="~/Content/Olsen Brothers - Wings Of Love.mp3" autoplay id="myaudio">
         <p>If you are reading this, it is because your browser does not support the audio element.     </p>
-        <embed src="~/Content/Olsen Brothers - Wings Of Love.mp3" width="180" height="90" hidden="true" />
+        <embed src="~/Content/Olsen Brothers - Wings Of Love.mp3" width="180" height="90" hidden="hidden" />
     </audio>
-
+    <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.1;
+    </script>
     @using (Html.BeginForm())
     {
         <div>
