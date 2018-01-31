@@ -131,7 +131,6 @@
     <Content Include="Views\Shared\DiceView.cshtml" />
     <Content Include="Views\Shared\BoardView.cshtml" />
     <Content Include="Views\Ludo\StartPage.cshtml" />
-    <Content Include="Views\Ludo\About.cshtml" />
     <Content Include="Views\Ludo\WinPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

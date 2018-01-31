@@ -97,11 +97,6 @@ namespace LudoGame.Controllers
             return View(myGame);
         }
 
-        public ActionResult About()
-        {
-            return View();
-        }
-
         public ActionResult Index()
         {
             return View(myGame);
