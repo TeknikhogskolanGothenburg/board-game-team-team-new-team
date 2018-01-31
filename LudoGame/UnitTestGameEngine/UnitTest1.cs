@@ -10,6 +10,7 @@ namespace UnitTestGameEngine
     {
         LudoGame.Models.Game game = new LudoGame.Models.Game();
         GamePlayer gameplayer = new GamePlayer();
+        GameDice dice = new GameDice();
 
         [TestMethod]
         public void ControlIfGameHasWinner()
@@ -19,6 +20,20 @@ namespace UnitTestGameEngine
                 gameplayer.Win = true;
             }
             Assert.IsTrue(gameplayer.Win);
+        }
+        [TestMethod]
+        public void CheckDiceRolls()
+        {
+            bool passed;
+            if(dice.Value < 6 || dice.Value > 0)
+            {
+                passed = true;  
+            }
+            else
+            {
+                passed = false;
+            }
+            Assert.IsTrue(passed);
         }
     }
 }
