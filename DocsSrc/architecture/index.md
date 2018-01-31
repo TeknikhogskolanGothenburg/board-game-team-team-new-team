@@ -1,9 +1,7 @@
 # Architecture
 ## The Game's Build
 >
->The Game starts in the StartPage Controller where a user can select how many players will be in the game,
->
->their choice of color, their name,and as an option their email. 
+>The Game starts in the StartPage Controller where a user can select how many players will be in the game, their choice of color, their name,and as an option their email. 
 >
 >Once the Enter button is clicked, the player data is saved in a GamePlayer class within the Game model and a player specific cookie is created.
 >
