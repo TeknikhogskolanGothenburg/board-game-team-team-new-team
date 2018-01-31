@@ -28,29 +28,29 @@
 ## Which components does your application consist of?
 1 Controller
 11 Views
-* StartPage
-* Index
-* StartGame
-* RollDice
-* MovePiece1
-* MovePiece2
-* MovePiece3
-* MovePiece4
-* EndTurn
-* WinPage
-* NewGame
+* StartPage: Allows for user input and creates GamePlayers accordingly.
+* Index: Displays Game Board.
+* StartGame: Checks players verses the # of players chosen for the game; if condition is met starts the game.
+* RollDice: calls RollDice(). Also turns the respectives Player's CanMove boolean to true if conditions are met.
+* MovePiece1: Moves the respective players 1st piece.
+* MovePiece2: Moves the respective players 2nd piece.
+* MovePiece3: Moves the respective players 3rd piece.
+* MovePiece4: Moves the respective players 4th piece.
+* EndTurn: Ends user turn.
+* WinPage: displays winner, can redirect to StartPage on button press
+* NewGame: resets all static values and redirects to StartPage
 >
 >
 3 Classes
-* GamePlayer
-* GamePiece
-* GameDice
+* GamePlayer:holds all player information, checks if can roll,move, or if has turn, 4 different GamePieces, 3 methods: one for turn, one for win condition, and one for sending emails.
+* GamePiece:a boolean to see if piece is in play, an int for position on gameboard, and 2 methods for moving and attacking a piece.
+* GameDice: holds a random value from 1-6 and reassigns that value everytime the RollDice() is called
 >
 >
 1 Model
-* GamePlayer List
-* GameDice
-* buttonPressed bool
+* List Gameplayer: A list of all players in the current game.
+* GameDice: holds the values of the dice class as a model for html use.
+* buttonPressed bool: a boolean for html use to hide or display the start game button(onced pressed it is hidden)
 
 
 
