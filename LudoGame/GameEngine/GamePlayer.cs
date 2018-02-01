@@ -209,7 +209,7 @@ namespace GameEngine
 
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("Ludoblizzard@hotmail.com");
-            if (Email != null)
+            if (Email != null || Email != "")
             {
                 mailMessage.To.Add(Email);
                 mailMessage.Subject = "Hello from Ludogame";
